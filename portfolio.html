@@ -1,0 +1,212 @@
+<!-- 
+ Haya Mahmoud 
+ Personal Website - Portfolio Page
+ August 14, 2025
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Haya | Portfolio</title>
+    <link rel="stylesheet" href="webstyle.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="top-nav">
+      <div class="logo">
+        <a href="home.html">HM</a>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <div class="resume-link">
+            <li><a href="https://drive.google.com/file/d/1iPCF2ajdeju3-Ob9amh6oJM-vOTVtEEb/view?usp=sharing" target ="_blank">Resume</a></li>
+          </div>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="projects">
+        <h1>Personal Projects</h1>
+        <ul class="projects-list">
+          <li>
+            <div class="table project-card">
+              <div class="project-icon">🍳</div>
+              <h4>
+                <a
+                  href="https://github.com/hayamahmoudd/RecipeGenerator"
+                  target="_blank"
+                  >Recipe Generator</a
+                >
+              </h4>
+              <p class="project-description">
+                Developed a web app that generates recipes based on ingredients
+                entered by the user.
+              </p>
+              <ul class="project-details">
+                <li>
+                  Utilized Spoonacular's API to generate meaningful recipes that
+                  innovatively incorporates the user's input
+                </li>
+              </ul>
+              <div class="tech-stack">
+                <span class="tech-tag">HTML</span>
+                <span class="tech-tag">CSS</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">Node.js</span>
+                <span class="tech-tag">Spoonacular API</span>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="table project-card">
+              <div class="project-icon">🤖</div>
+              <h4>
+                <a
+                  href="https://github.com/hayamahmoudd/CareerFinderAI"
+                  target="_blank"
+                  >Career Path Agent</a
+                >
+              </h4>
+              <p class="project-description">
+                Developed a career exploration web app that utilizes the Google Gemini API (2.5 model).
+              </p>
+              <ul class="project-details">
+                <li>
+                  Implemented AI model rules to provide concise responses and generate only 2–3 relevant career paths based on user interests.
+                </li>
+              </ul>
+              <div class="tech-stack">
+                <span class="tech-tag">HTML</span>
+                <span class="tech-tag">CSS</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">Node.js</span>
+                <span class="tech-tag">Gemini API</span>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="table project-card">
+              <div class="project-icon">📊</div>
+              <h4>
+                <a
+                  href="https://github.com/hayamahmoudd/Job-Vacancy-Analysis"
+                  target="_blank"
+                  >Job Vacancy Analysis</a
+                >
+              </h4>
+              <p class="project-description">
+                Analyzed job vacancies in Canada to identify trends and
+                opportunities.
+              </p>
+              <ul class="project-details">
+                <li>
+                  Utilized Python for data analysis and visualization, providing
+                  insights on big data trends.
+                </li>
+              </ul>
+              <div class="tech-stack">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Pandas</span>
+                <span class="tech-tag">Matplotlib</span>
+                <span class="tech-tag">Data Analysis</span>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </section>
+      <section class="skills">
+        <h1>Languages</h1>
+        <ul class="skills-list">
+          <li>Python</li>
+          <li>C</li>
+          <li>Java</li>
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JavaScript</li>
+        </ul>
+      </section>
+      <section class="skills">
+        <h1>Relevant Skills</h1>
+        <ul class="skills-list">
+          <li>Object Oriented</li>
+          <li>Data Structures</li>
+          <li>API Integration</li>
+          <li>Agile Practices</li>
+          <li>Teamwork</li>
+          <li>Leadership</li>
+          <li>Adaptability</li>
+          <li>Microsoft Office</li>
+          <li>Problem-solving</li>
+          <li>LaTeX</li>
+        </ul>
+      </section>
+    </main>
+
+    <!-- Scroll to top button -->
+    <button class="scroll-to-top" onclick="scrollToTop()">↑</button>
+
+    <footer>
+      <!-- Social Media Icons -->
+      <ul class="footer-social-icons">
+        <li data-name="Gmail">
+          <a href="mailto:hayasydm1010@gmail.com">
+            <img src="images/gmail.png" alt="Gmail Icon" />
+          </a>
+        </li>
+        <li data-name="Outlook">
+          <a href="mailto:hmahmo03@uoguelph.ca">
+            <img src="images/outlook.png" alt="Outlook Icon" />
+          </a>
+        </li>
+        <li data-name="LinkedIn">
+          <a href="https://www.linkedin.com/in/hayamahmoud" target="_blank">
+            <img src="images/linkedin.png" alt="LinkedIn Icon" />
+          </a>
+        </li>
+        <li data-name="GitHub">
+          <a href="https://github.com/hayamahmoudd" target="_blank">
+            <img src="images/github.png" alt="GitHub Icon" />
+          </a>
+        </li>
+      </ul>
+
+      <!-- Navigation Links -->
+      <ul class="footer-nav-links">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </footer>
+
+    <script>
+      function scrollToTop() {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      }
+
+      // Show/hide scroll to top button
+      window.addEventListener("scroll", function () {
+        const scrollButton = document.querySelector(".scroll-to-top");
+        if (window.pageYOffset > 300) {
+          scrollButton.style.opacity = "1";
+          scrollButton.style.visibility = "visible";
+        } else {
+          scrollButton.style.opacity = "0";
+          scrollButton.style.visibility = "hidden";
+        }
+      });
+    </script>
+  </body>
+</html>

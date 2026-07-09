@@ -23,11 +23,11 @@
 
     <nav>
       <ul id="nav-menu">
-        <li><a href="index.html#home">Home</a></li>
-        <li><a href="index.html#experience">Experience</a></li>
-        <li><a class="active" href="index.html#projects">Projects</a></li>
-        <li><a href="index.html#skills">Skills</a></li>
-        <li><a href="index.html#contact">Contact</a></li>
+        <li><a href="index.html" data-section="home">Home</a></li>
+        <li><a href="index.html" data-section="experience">Experience</a></li>
+        <li><a class="active" href="index.html" data-section="projects">Projects</a></li>
+        <li><a href="index.html" data-section="skills">Skills</a></li>
+        <li><a href="index.html" data-section="contact">Contact</a></li>
         <li class="resume-link">
           <a href="HayaMahmoudResume.pdf" target="_blank">Resume</a>
         </li>
@@ -273,11 +273,11 @@
       </div>
       
       <nav class="footer-nav">
-        <a href="index.html#home">Home</a>
-        <a href="index.html#experience">Experience</a>
-        <a href="index.html#projects">Projects</a>
-        <a href="index.html#skills">Skills</a>
-        <a href="index.html#contact">Contact</a>
+        <a href="index.html" data-section="home">Home</a>
+        <a href="index.html" data-section="experience">Experience</a>
+        <a href="index.html" data-section="projects">Projects</a>
+        <a href="index.html" data-section="skills">Skills</a>
+        <a href="index.html" data-section="contact">Contact</a>
       </nav>
     </div>
     
@@ -290,6 +290,14 @@
 function toggleMenu() {
   document.getElementById("nav-menu").classList.toggle("active");
 }
+
+document.querySelectorAll('a[data-section]').forEach(link => {
+  link.addEventListener('click', event => {
+    event.preventDefault();
+    sessionStorage.setItem('targetSection', link.dataset.section);
+    window.location.href = link.getAttribute('href');
+  });
+});
 </script>
 
 

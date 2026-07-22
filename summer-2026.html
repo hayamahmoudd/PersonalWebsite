@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Summer 2026 Co-op Report by Haya Mahmoud.">
+  <meta name="keywords" content="Haya Mahmoud, Co-op Report, Summer 2026, Software Engineering, Kenna">
+  <meta name="author" content="Haya Mahmoud">
+  <meta property="og:title" content="Summer 2026 Co-op Report | Haya Mahmoud">
+  <meta property="og:description" content="An interactive co-op work term report for Summer 2026 at Kenna.">
+  <meta property="og:type" content="website">
+  <title>Summer 2026 Co-op Report | Haya Mahmoud</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="webstyle.css">
+</head>
+<body>
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <header class="top-nav">
+    <div class="nav-container">
+      <div class="logo">
+        <a href="index.html" aria-label="Go to home page">HM</a>
+      </div>
+
+      <button class="menu-toggle" aria-label="Toggle navigation" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav aria-label="Main navigation">
+        <ul id="nav-menu">
+          <li><a href="index.html" data-section="home">Home</a></li>
+          <li><a href="index.html" data-section="experience">Experience</a></li>
+          <li class="nav-dropdown active">
+            <button class="nav-dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">Co-op Reports</button>
+            <div class="nav-dropdown-menu" aria-label="Co-op report links">
+              <a href="index.html" data-section="coop-reports">Overview</a>
+              <a href="summer-2026.html" class="active">Summer 2026</a>
+            </div>
+          </li>
+          <li><a href="index.html" data-section="projects">Projects</a></li>
+          <li><a href="index.html" data-section="skills">Skills</a></li>
+          <li><a href="index.html" data-section="contact">Contact</a></li>
+          <li class="resume-link">
+            <a href="HayaMahmoudResume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="coop-report-page">
+    <section class="report-hero kenna-report-hero">
+      <div class="report-hero-content">
+        <a href="index.html#coop-reports" class="report-back-link">Back to reports</a>
+        <p class="section-kicker">Co-op Work Term Report</p>
+        <h1>Summer 2026</h1>
+        <p class="report-hero-summary">
+          My first software co-op term at Kenna as a Web Applications Developer Co-op,
+          where I joined a professional development team, contributed to client-facing
+          web solutions, and learned how software supports real business needs.
+        </p>
+
+        <div class="report-hero-tags" aria-label="Report summary">
+          <span>Kenna</span>
+          <span>Web Applications</span>
+          <span>Mississauga</span>
+        </div>
+      </div>
+
+      <div class="report-hero-panel report-brand-panel playful-card" aria-label="Kenna report overview">
+        <img src="images/kenna.jpg" alt="Kenna logo" class="report-brand-logo">
+        <span class="report-panel-label">Current Term</span>
+        <div class="report-panel-number">2026</div>
+        <p>Web Applications Developer Co-op in a hybrid role at Kenna.</p>
+      </div>
+    </section>
+
+    <section class="report-layout" aria-label="Summer 2026 report content">
+      <aside class="report-toc" aria-label="Report sections">
+        <a href="#introduction" class="active">Introduction</a>
+        <a href="#employer">Employer</a>
+        <a href="#goals">Goals</a>
+        <a href="#job-description">Job Description</a>
+        <a href="#conclusions">Conclusions</a>
+        <a href="#acknowledgments">Acknowledgments</a>
+      </aside>
+
+      <div class="report-sections">
+        <article class="report-section-card playful-card" id="introduction">
+          <div class="report-media-grid">
+            <div class="report-copy">
+              <span class="report-section-count">01</span>
+              <h2>Introduction</h2>
+              <p>
+                Welcome to my Summer 2026 co-op report about my experience as a Web
+                Applications Developer Co-op at Kenna.
+              </p>
+              <p>
+                In mid December 2025, I began searching for my first co-op opportunity and
+                came across Kenna's Web Applications Developer position. I was immediately
+                drawn to the company's unique intersection of agriculture, marketing, data,
+                and software.
+              </p>
+              <p>
+                After speaking with former co-op students and current developers, I became
+                even more confident that Kenna would be a great place to learn. They described
+                a welcoming environment, friendly coworkers, and many opportunities to connect
+                through social events.
+              </p>
+              <p>
+                During my term, I met many amazing people, strengthened both my technical and
+                communication skills, and gained valuable experience working as part of a
+                professional software development team for the first time.
+              </p>
+            </div>
+
+            <figure class="report-photo-card">
+              <img src="images/kennaoffice.jpg" alt="Kenna office space">
+              <figcaption>Kenna's office space, where I spent my in-person workdays.</figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <article class="report-section-card playful-card" id="employer">
+          <span class="report-section-count">02</span>
+          <h2>Information About Kenna</h2>
+
+          <div class="employer-showcase">
+            <figure class="report-photo-card">
+              <img src="images/kenna-welcomepackage.jpg" alt="Kenna welcome package">
+              <figcaption>Some items from my welcome package that I got in the first week of my term</figcaption>
+            </figure>
+
+            <div class="report-copy">
+              <h3>About Kenna</h3>
+              <p>
+                Kenna is a Mississauga-based company that brings together marketing, data,
+                strategy, creative work, and software development. Their teams support clients
+                through digital tools, campaign platforms, internal systems, and customer-focused
+                web solutions.
+              </p>
+              <p>
+                One thing that stood out to me was Kenna's people-first environment. The job
+                posting emphasized Customer First Thinking, and I saw that same mindset reflected
+                in the way students and employees were supported.
+              </p>
+            </div>
+          </div>
+
+          <div class="location-feature">
+            <div class="report-copy">
+              <h3>Location and Work Environment</h3>
+              <p>
+                Kenna's office is located in Mississauga, about a five minute walk from Square
+                One. That made office days feel lively and convenient, with food, transit, and
+                places to walk nearby.
+              </p>
+              <p>
+                The hybrid schedule created a good rhythm: Tuesdays, Wednesdays, and Thursdays
+                were in office for collaboration, while Mondays and Fridays were remote for
+                focused development time.
+              </p>
+            </div>
+
+            <figure class="report-photo-card location-photo">
+              <img src="images/kennalounge.jpg" alt="Kenna lounge area">
+              <figcaption>The view of the "Marilyn Monroe Towers" from the Kenna lounge</figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <article class="report-section-card playful-card" id="goals">
+          <span class="report-section-count">03</span>
+          <h2>Goals</h2>
+          <div class="goal-grid">
+            <section>
+              <h3>Technical Growth</h3>
+              <p>
+                Build stronger confidence with full-stack web development, debugging, and
+                contributing to existing production systems.
+              </p>
+            </section>
+            <section>
+              <h3>Communication</h3>
+              <p>
+                Practice asking clear questions, sharing progress, and communicating technical
+                work with developers, QA, designers, and stakeholders.
+              </p>
+            </section>
+            <section>
+              <h3>Professional Confidence</h3>
+              <p>
+                Learn how a software team works day to day and become more comfortable taking
+                ownership of assigned work.
+              </p>
+            </section>
+          </div>
+        </article>
+
+        <article class="report-section-card playful-card job-description-report" id="job-description">
+          <div class="job-posting-header">
+            <span class="report-section-count">04</span>
+            <img src="images/kenna.jpg" alt="Kenna logo">
+            <div>
+              <h2>Job Description</h2>
+            </div>
+          </div>
+
+          <div class="job-posting-card">
+            <div class="posting-title-row">
+              <div>
+                <p class="posting-eyebrow">Job Summary</p>
+                <h3>Web Application Developer Co-op</h3>
+              </div>
+              <span class="posting-badge">Hybrid</span>
+            </div>
+            <p>
+              At Kenna, one of our core philosophies is Customer First Thinking. It's how we help our clients' turn
+              customers into their biggest fans. That philosophy is echoed in the way we treat our employees. By
+              putting people first, we attract some of the marketing industry's brightest minds, and we're proud
+              of our sterling track record of hanging onto them. Join Kenna as a co-op student, and not only will
+              you help build our clients' businesses - you'll grow your own potential. Whether your true calling is
+              in Client Service, Creative, Data Solutions, Digital Design, Insights & Strategy, Finance, Application
+              Development, IT Services or Social Media, you'll find it all under one roof at Kenna. So if you're
+              looking to make a meaningful impact on one of these diverse teams, this could be a great
+              opportunity for you. And us.
+            </p>
+          </div>
+
+          <div class="posting-grid">
+            <section class="posting-block">
+              <h3>Description</h3>
+              <p>
+                Join a team of experienced web developers and explore web development in an
+                environment built around creativity, collaboration, and innovation.
+              </p>
+            </section>
+
+            <section class="posting-block">
+              <h3>Career Development</h3>
+              <p>
+                Learn web development concepts, tools, and frameworks through hands-on training,
+                mentorship, and professional development tailored to students.
+              </p>
+            </section>
+          </div>
+
+          <div class="posting-list-board">
+            <section class="posting-list">
+              <h3>Responsibilities</h3>
+              <ul>
+                <li>Develop new web solutions that follow industry standards and best practices.</li>
+                <li>Use analytical and problem-solving skills to work through technical challenges.</li>
+                <li>Share meaningful suggestions, feedback, and insights to support business goals.</li>
+                <li>Update, enhance, and maintain existing web solutions.</li>
+              </ul>
+            </section>
+
+            <section class="posting-list">
+              <h3>Required Skills</h3>
+              <ul>
+                <li>Strong programming background through coursework or relevant experience.</li>
+                <li>Understanding of object-oriented programming, data structures, and algorithms.</li>
+                <li>Foundational web language experience with HTML, JavaScript, and CSS.</li>
+              </ul>
+            </section>
+
+            <section class="posting-list">
+              <h3>Non-essential Skills</h3>
+              <ul>
+                <li>Node.js, React, jQuery, Kendo UI, and Materialize.</li>
+                <li>SQL, MySQL, REST or SOAP APIs, XML, JSON, and AJAX.</li>
+                <li>AWS tools, Git, GitHub, Bitbucket, and Jenkins.</li>
+                <li>Responsive design, CSS Grid, flexbox, transitions, animations, and media queries.</li>
+              </ul>
+            </section>
+
+            <section class="posting-list">
+              <h3>About You</h3>
+              <ul>
+                <li>Passionate about web development and motivated to keep learning.</li>
+                <li>Comfortable solving problems independently and as part of a team.</li>
+                <li>Strong written and verbal communication skills.</li>
+                <li>Open to sharing ideas and engaging with the team.</li>
+              </ul>
+            </section>
+          </div>
+
+          <div class="posting-benefits">
+            <div>
+              <h3>Benefits</h3>
+              <p>
+                The role offered a positive learning environment, team-building events, social
+                events, company events, and a flexible hybrid model.
+              </p>
+            </div>
+            <div class="hybrid-schedule" aria-label="Hybrid work schedule">
+              <span>Mon Remote</span>
+              <span>Tue Office</span>
+              <span>Wed Office</span>
+              <span>Thu Office</span>
+              <span>Fri Remote</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="report-section-card playful-card" id="conclusions">
+          <span class="report-section-count">05</span>
+          <h2>Conclusions</h2>
+          <p>
+            My Summer 2026 term at Kenna gave me a clearer picture of what professional
+            software development looks like in practice. I gained experience reading existing
+            code, contributing to shared systems, collaborating with teammates, and balancing
+            technical growth with communication.
+          </p>
+          <p>
+            Most importantly, this placement helped me feel more confident stepping into a
+            developer role. I left the term with stronger skills, better habits, and a deeper
+            appreciation for the people behind good software.
+          </p>
+        </article>
+
+        <article class="report-section-card playful-card" id="acknowledgments">
+          <span class="report-section-count">06</span>
+          <h2>Acknowledgments</h2>
+          <p>
+            I am grateful to my managers, mentors, teammates, and fellow co-op students at
+            Kenna for creating such a welcoming and supportive environment. Thank you for your
+            guidance, patience, feedback, and encouragement throughout the term.
+          </p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-brand">HM</div>
+
+      <div class="footer-social">
+        <a href="mailto:hmahmo03@uoguelph.ca" aria-label="Email">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect width="20" height="16" x="2" y="4" rx="2"/>
+            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+          </svg>
+        </a>
+        <a href="https://www.linkedin.com/in/hayamahmoud" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+            <rect width="4" height="12" x="2" y="9"/>
+            <circle cx="4" cy="4" r="2"/>
+          </svg>
+        </a>
+        <a href="https://github.com/hayamahmoudd" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/>
+            <path d="M9 18c-4.51 2-5-2-7-2"/>
+          </svg>
+        </a>
+      </div>
+
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="index.html" data-section="home">Home</a>
+        <a href="index.html" data-section="experience">Experience</a>
+        <a href="index.html" data-section="coop-reports">Co-op Reports</a>
+        <a href="index.html" data-section="projects">Projects</a>
+        <a href="index.html" data-section="skills">Skills</a>
+        <a href="index.html" data-section="contact">Contact</a>
+      </nav>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 Haya Mahmoud</p>
+    </div>
+  </footer>
+
+  <script>
+    const navMenu = document.getElementById('nav-menu');
+    const progress = document.querySelector('.scroll-progress');
+    const reportCards = document.querySelectorAll('.report-section-card');
+    const tocLinks = document.querySelectorAll('.report-toc a');
+    const navDropdowns = document.querySelectorAll('.nav-dropdown');
+    const dropdownToggles = document.querySelectorAll('.nav-dropdown-toggle');
+
+    function toggleMenu() {
+      navMenu.classList.toggle('active');
+    }
+
+    if (window.location.protocol !== 'file:' && window.location.pathname !== '/coop-reports/s26') {
+      history.replaceState(null, '', '/coop-reports/s26');
+    }
+
+    document.querySelectorAll('a[data-section]').forEach(link => {
+      link.addEventListener('click', event => {
+        event.preventDefault();
+        navMenu.classList.remove('active');
+        sessionStorage.setItem('targetSection', link.dataset.section);
+        window.location.href = window.location.protocol === 'file:' ? link.getAttribute('href') : '/index.html';
+      });
+    });
+
+    dropdownToggles.forEach(toggle => {
+      toggle.addEventListener('click', () => {
+        const dropdown = toggle.closest('.nav-dropdown');
+        const isOpen = dropdown.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', String(isOpen));
+      });
+    });
+
+    document.querySelectorAll('a[href="summer-2026.html"]').forEach(link => {
+      link.addEventListener('click', event => {
+        if (window.location.protocol === 'file:') return;
+        event.preventDefault();
+        window.location.href = '/coop-reports/s26';
+      });
+    });
+
+    document.querySelectorAll('.playful-card').forEach(card => {
+      card.addEventListener('pointermove', event => {
+        const rect = card.getBoundingClientRect();
+        const x = event.clientX - rect.left;
+        const y = event.clientY - rect.top;
+        card.style.setProperty('--tilt-x', `${((y / rect.height) - 0.5) * -4}deg`);
+        card.style.setProperty('--tilt-y', `${((x / rect.width) - 0.5) * 4}deg`);
+      });
+
+      card.addEventListener('pointerleave', () => {
+        card.style.setProperty('--tilt-x', '0deg');
+        card.style.setProperty('--tilt-y', '0deg');
+      });
+    });
+
+    document.addEventListener('pointermove', event => {
+      document.body.style.setProperty('--cursor-x', `${event.clientX}px`);
+      document.body.style.setProperty('--cursor-y', `${event.clientY}px`);
+    });
+
+    window.addEventListener('scroll', () => {
+      const nav = document.querySelector('.top-nav');
+      nav.classList.toggle('scrolled', window.scrollY > 50);
+
+      const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+      const progressWidth = maxScroll > 0 ? (window.scrollY / maxScroll) * 100 : 0;
+      progress.style.width = `${progressWidth}%`;
+    });
+
+    const revealObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('is-visible');
+      });
+    }, { threshold: 0.14 });
+
+    reportCards.forEach(card => revealObserver.observe(card));
+
+    const tocObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        tocLinks.forEach(link => link.classList.remove('active'));
+        const activeLink = document.querySelector(`.report-toc a[href="#${entry.target.id}"]`);
+        if (activeLink) activeLink.classList.add('active');
+      });
+    }, { rootMargin: '-30% 0px -58% 0px', threshold: 0 });
+
+    reportCards.forEach(card => tocObserver.observe(card));
+  </script>
+</body>
+</html>

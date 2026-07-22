@@ -35,6 +35,13 @@
         <ul id="nav-menu">
           <li><a href="index.html" data-section="home" class="active">Home</a></li>
           <li><a href="index.html" data-section="experience">Experience</a></li>
+          <li class="nav-dropdown">
+            <button class="nav-dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">Co-op Reports</button>
+            <div class="nav-dropdown-menu" aria-label="Co-op report links">
+              <a href="index.html" data-section="coop-reports">Overview</a>
+              <a href="summer-2026.html">Summer 2026</a>
+            </div>
+          </li>
           <li><a href="index.html" data-section="projects">Projects</a></li>
           <li><a href="index.html" data-section="skills">Skills</a></li>
           <li><a href="index.html" data-section="contact">Contact</a></li>
@@ -87,11 +94,12 @@
           <div class="experience-content">
             <p class="project-meta">FreshBooks</p>
             <h3>Full Stack Software Engineer Co-op</h3>
-            <div class = "job-description">
+            <ul class="job-description">
             <li>
               Incoming Fall 2026
             </li>
-            </div>
+            </ul>
+          </div>
         </article>
 
         <article class="experience-card playful-card">
@@ -101,7 +109,7 @@
           <div class="experience-content">
             <p class="project-meta">Kenna</p>
             <h3>Web Application Developer Co-op</h3>
-            <div class = "job-description">
+            <ul class="job-description">
             <li>
               Develop and maintain full-stack web applications for enterprise clients, delivering campaign sites, internal tools,
               and client-facing workflows used by <strong>20,000+</strong> active users across the U.S. and Canada.
@@ -114,7 +122,7 @@
             Collaborate with developers, QA, designers, and stakeholders in an Agile environment using Git, Jira, code reviews,
             release testing, and CI/CD workflows to ship to production.
             </li>
-            </div>
+            </ul>
             <div class="experience-tags">
               <span>JavaScript/TypeScript</span>
               <span>Node</span>
@@ -135,14 +143,14 @@
           <div class="experience-content">
             <p class="project-meta">Sleeman Centre</p>
             <h3>Concessions Server & Shift Leader</h3>
-            <div class = "job-description">
+            <ul class="job-description">
             <li>
               Serve <strong>100+</strong> customers per shift in a fast paced concessions environment.
             </li>
             <li>
               Promoted to Shift Leader where responsible for opening/closing operatings and supervising <strong>2-3</strong> staff.
             </li>
-            </div>
+            </ul>
             <div class="experience-tags">
               <span>Leadership</span>
               <span>Part Time</span>
@@ -150,6 +158,53 @@
             </div>
           </div>
         </article>
+      </div>
+    </section>
+
+    <section class="coop-reports-section snap-section reveal" id="coop-reports">
+      <div class="coop-shell whiteboard-board">
+        <div class="whiteboard-arrow arrow-one" aria-hidden="true"></div>
+        <div class="whiteboard-arrow arrow-two" aria-hidden="true"></div>
+
+        <div class="section-header">
+          <p class="section-kicker">Co-op Reports</p>
+          <h2>Learning in the Field</h2>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="coop-intro-grid">
+          <article class="coop-intro playful-card whiteboard-note">
+            <div class="coop-intro-topline">
+              <span class="coop-label">Introduction</span>
+              <span class="coop-current-pill">Current term</span>
+            </div>
+            <h3>Stories from each co-op term</h3>
+            <p>
+              Welcome to my co-op reports selection
+            </p>
+            <div class="coop-highlights" aria-label="Current co-op summary">
+              <span>Kenna</span>
+              <span>Web Applications</span>
+              <span>Summer 2026</span>
+            </div>
+          </article>
+
+          <a href="summer-2026.html" class="coop-term-card playful-card whiteboard-note feature-note" aria-label="Open Summer 2026 co-op report">
+            <div class="coop-term-topline">
+              <span>Read the Report</span>
+              <span>01</span>
+            </div>
+            <div class="coop-term-main">
+              <p>Summer</p>
+              <h3>2026</h3>
+              <span class="coop-company-mark">Kenna</span>
+            </div>
+            <div class="coop-term-footer">
+              <span>View work term reflection</span>
+              <span aria-hidden="true">-&gt;</span>
+            </div>
+          </a>
+        </div>
       </div>
     </section>
 
@@ -481,6 +536,7 @@
       <nav class="footer-nav" aria-label="Footer navigation">
         <a href="index.html" data-section="home">Home</a>
         <a href="index.html" data-section="experience">Experience</a>
+        <a href="index.html" data-section="coop-reports">Co-op Reports</a>
         <a href="index.html" data-section="projects">Projects</a>
         <a href="index.html" data-section="skills">Skills</a>
         <a href="index.html" data-section="contact">Contact</a>
@@ -496,37 +552,63 @@
     const navMenu = document.getElementById('nav-menu');
     const sectionLinks = document.querySelectorAll('a[data-section]');
     const navLinks = document.querySelectorAll('#nav-menu a[data-section]');
+    const navDropdowns = document.querySelectorAll('.nav-dropdown');
+    const dropdownToggles = document.querySelectorAll('.nav-dropdown-toggle');
     const sections = document.querySelectorAll('section[id]');
     const progress = document.querySelector('.scroll-progress');
     const form = document.querySelector('.contact-form');
+    const sectionPaths = {
+      home: '/Home',
+      experience: '/Experience',
+      'coop-reports': '/coop-reports',
+      projects: '/Projects',
+      skills: '/Skills',
+      contact: '/Contact'
+    };
+    const pathSections = Object.fromEntries(Object.entries(sectionPaths).map(([section, path]) => [path.toLowerCase(), section]));
 
     function toggleMenu() {
       navMenu.classList.toggle('active');
     }
 
-    function cleanUrl() {
-      const url = new URL(window.location.href);
-      url.hash = '';
-      url.searchParams.delete('section');
-      let pathname = url.pathname;
-      if (url.protocol.startsWith('http') && pathname.endsWith('/index.html')) {
-        pathname = pathname.slice(0, -'index.html'.length);
-      }
-      history.replaceState(null, '', `${pathname}${url.search}`);
+    function updateSectionPath(sectionId, replace = false) {
+      if (window.location.protocol === 'file:') return;
+      const nextPath = sectionPaths[sectionId];
+      if (!nextPath || window.location.pathname === nextPath) return;
+      const method = replace ? 'replaceState' : 'pushState';
+      history[method](null, '', nextPath);
     }
 
-    function scrollToSection(sectionId, behavior = 'smooth') {
+    function scrollToSection(sectionId, behavior = 'smooth', replaceUrl = false) {
       const section = document.getElementById(sectionId);
       if (!section) return;
       section.scrollIntoView({ behavior, block: 'start' });
-      cleanUrl();
+      updateSectionPath(sectionId, replaceUrl);
     }
 
     sectionLinks.forEach(link => {
       link.addEventListener('click', event => {
         event.preventDefault();
         navMenu.classList.remove('active');
+        navDropdowns.forEach(dropdown => dropdown.classList.remove('open'));
+        dropdownToggles.forEach(toggle => toggle.setAttribute('aria-expanded', 'false'));
         scrollToSection(link.dataset.section);
+      });
+    });
+
+    dropdownToggles.forEach(toggle => {
+      toggle.addEventListener('click', () => {
+        const dropdown = toggle.closest('.nav-dropdown');
+        const isOpen = dropdown.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', String(isOpen));
+      });
+    });
+
+    document.querySelectorAll('a[href="summer-2026.html"]').forEach(link => {
+      link.addEventListener('click', event => {
+        if (window.location.protocol === 'file:') return;
+        event.preventDefault();
+        window.location.href = '/coop-reports/s26';
       });
     });
 
@@ -535,9 +617,10 @@
       sessionStorage.removeItem('targetSection');
     }
 
-    const initialSection = storedSection || new URLSearchParams(window.location.search).get('section') || window.location.hash.slice(1);
+    const normalizedPath = window.location.pathname.replace(/\/$/, '').toLowerCase();
+    const initialSection = storedSection || new URLSearchParams(window.location.search).get('section') || window.location.hash.slice(1) || pathSections[normalizedPath];
     if (initialSection) {
-      requestAnimationFrame(() => scrollToSection(initialSection, 'auto'));
+      requestAnimationFrame(() => scrollToSection(initialSection, 'auto', true));
     }
 
     window.addEventListener('scroll', () => {
@@ -554,7 +637,10 @@
         if (!entry.isIntersecting) return;
         const activeLink = document.querySelector(`#nav-menu a[data-section="${entry.target.id}"]`);
         navLinks.forEach(link => link.classList.remove('active'));
+        navDropdowns.forEach(dropdown => dropdown.classList.remove('active'));
         if (activeLink) activeLink.classList.add('active');
+        if (activeLink) activeLink.closest('.nav-dropdown')?.classList.add('active');
+        updateSectionPath(entry.target.id, true);
       });
     }, { rootMargin: '-35% 0px -55% 0px', threshold: 0 });
 
@@ -566,7 +652,7 @@
       });
     }, { threshold: 0.16 });
 
-    document.querySelectorAll('.reveal, .project-card, .skills-card, .experience-card').forEach(item => {
+    document.querySelectorAll('.reveal, .project-card, .skills-card, .experience-card, .coop-intro, .coop-term-card').forEach(item => {
       revealObserver.observe(item);
     });
 

@@ -25,6 +25,13 @@
       <ul id="nav-menu">
         <li><a href="index.html" data-section="home">Home</a></li>
         <li><a href="index.html" data-section="experience">Experience</a></li>
+        <li class="nav-dropdown">
+          <button class="nav-dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">Co-op Reports</button>
+          <div class="nav-dropdown-menu" aria-label="Co-op report links">
+            <a href="index.html" data-section="coop-reports">Overview</a>
+            <a href="summer-2026.html">Summer 2026</a>
+          </div>
+        </li>
         <li><a class="active" href="index.html" data-section="projects">Projects</a></li>
         <li><a href="index.html" data-section="skills">Skills</a></li>
         <li><a href="index.html" data-section="contact">Contact</a></li>
@@ -275,6 +282,7 @@
       <nav class="footer-nav">
         <a href="index.html" data-section="home">Home</a>
         <a href="index.html" data-section="experience">Experience</a>
+        <a href="index.html" data-section="coop-reports">Co-op Reports</a>
         <a href="index.html" data-section="projects">Projects</a>
         <a href="index.html" data-section="skills">Skills</a>
         <a href="index.html" data-section="contact">Contact</a>
@@ -290,6 +298,22 @@
 function toggleMenu() {
   document.getElementById("nav-menu").classList.toggle("active");
 }
+
+document.querySelectorAll('.nav-dropdown-toggle').forEach(toggle => {
+  toggle.addEventListener('click', () => {
+    const dropdown = toggle.closest('.nav-dropdown');
+    const isOpen = dropdown.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', String(isOpen));
+  });
+});
+
+document.querySelectorAll('a[href="summer-2026.html"]').forEach(link => {
+  link.addEventListener('click', event => {
+    if (window.location.protocol === 'file:') return;
+    event.preventDefault();
+    window.location.href = '/coop-reports/s26';
+  });
+});
 
 document.querySelectorAll('a[data-section]').forEach(link => {
   link.addEventListener('click', event => {

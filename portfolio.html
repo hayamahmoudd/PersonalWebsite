@@ -322,6 +322,28 @@ document.querySelectorAll('a[data-section]').forEach(link => {
     window.location.href = link.getAttribute('href');
   });
 });
+
+function initScrollDownCues() {
+  const pageSections = Array.from(document.querySelectorAll('main > section'));
+  pageSections.slice(0, -1).forEach((section, index) => {
+    if (section.querySelector('.scroll-down-cue')) return;
+    const nextSection = pageSections[index + 1];
+    section.classList.add('has-scroll-cue');
+
+    const cue = document.createElement('button');
+    cue.type = 'button';
+    cue.className = 'scroll-down-cue';
+    cue.setAttribute('aria-label', 'Scroll down');
+    cue.innerHTML = '<span>Scroll down</span>';
+    cue.addEventListener('click', () => {
+      nextSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+
+    section.appendChild(cue);
+  });
+}
+
+initScrollDownCues();
 </script>
 
 

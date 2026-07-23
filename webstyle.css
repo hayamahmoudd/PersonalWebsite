@@ -24,6 +24,10 @@
   --surface: #ffffff;
   --surface-elevated: #ffffff;
   --board-line: rgba(156, 134, 108, 0.075);
+  --notebook-grid:
+    linear-gradient(var(--board-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--board-line) 1px, transparent 1px);
+  --notebook-grid-size: 32px 32px, 32px 32px;
   --marker-line: rgba(156, 134, 108, 0.34);
   --clip-beige: url('images/binder-clip-beige-tight.png');
   --clip-blue: url('images/binder-clip-blue-tight.png');
@@ -77,11 +81,11 @@ body {
 body {
   font-family: var(--font-body);
   background:
-    linear-gradient(var(--board-line) 1px, transparent 1px),
-    linear-gradient(90deg, var(--board-line) 1px, transparent 1px),
+    var(--notebook-grid),
     radial-gradient(420px circle at 12% 8%, rgba(156, 134, 108, 0.08), transparent 58%),
     var(--background);
-  background-size: 32px 32px, 32px 32px, auto, auto;
+  background-size: var(--notebook-grid-size), auto, auto;
+  background-attachment: fixed, fixed, scroll, scroll;
   color: var(--text-primary);
   line-height: 1.7;
   min-height: 100vh;
@@ -154,6 +158,85 @@ ul {
 
 .snap-section {
   scroll-margin-top: 86px;
+}
+
+main > section {
+  position: relative;
+}
+
+.has-scroll-cue {
+  padding-bottom: max(var(--space-3xl), 5.75rem);
+}
+
+.scroll-down-cue {
+  position: absolute;
+  left: 50%;
+  bottom: 1.35rem;
+  z-index: 5;
+  width: 46px;
+  height: 46px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(156, 134, 108, 0.32);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.76);
+  color: var(--accent);
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  transform: translateX(-50%);
+  transition: var(--transition);
+  animation: scrollCueFloat 1.8s ease-in-out infinite;
+}
+
+.scroll-down-cue::before,
+.scroll-down-cue::after {
+  content: '';
+  position: absolute;
+}
+
+.scroll-down-cue::before {
+  width: 2px;
+  height: 18px;
+  background: currentColor;
+  border-radius: 999px;
+}
+
+.scroll-down-cue::after {
+  width: 12px;
+  height: 12px;
+  margin-top: 10px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg);
+}
+
+.scroll-down-cue span {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+.scroll-down-cue:hover,
+.scroll-down-cue:focus-visible {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+  box-shadow: var(--shadow-md);
+  outline: none;
+}
+
+@keyframes scrollCueFloat {
+  0%, 100% {
+    transform: translate(-50%, 0);
+  }
+  50% {
+    transform: translate(-50%, 7px);
+  }
 }
 
 /* ---------- Typography ---------- */
@@ -441,10 +524,9 @@ nav ul li a.active::after,
   display: flex;
   align-items: center;
   background:
-    linear-gradient(var(--board-line) 1px, transparent 1px),
-    linear-gradient(90deg, var(--board-line) 1px, transparent 1px),
-    linear-gradient(135deg, rgba(250, 246, 241, 0.76) 0%, rgba(245, 239, 232, 0.8) 100%);
-  background-size: 34px 34px, 34px 34px, auto;
+    var(--notebook-grid),
+    linear-gradient(135deg, rgba(250, 246, 241, 0.5) 0%, rgba(245, 239, 232, 0.42) 100%);
+  background-size: var(--notebook-grid-size), auto;
 }
 
 .hero-content {
@@ -926,10 +1008,9 @@ nav ul li a.active::after,
 .report-hero,
 .report-layout {
   background:
-    linear-gradient(var(--board-line) 1px, transparent 1px),
-    linear-gradient(90deg, var(--board-line) 1px, transparent 1px),
+    var(--notebook-grid),
     transparent;
-  background-size: 32px 32px;
+  background-size: var(--notebook-grid-size);
 }
 
 /* Section Header with Divider */
@@ -992,7 +1073,7 @@ nav ul li a.active::after,
 /* ---------- Experience Section ---------- */
 .experience-section {
   padding: var(--space-4xl) var(--space-lg);
-  background: linear-gradient(180deg, var(--background-alt) 0%, var(--background) 100%);
+  background: transparent;
 }
 
 .experience-timeline {
@@ -1077,9 +1158,7 @@ nav ul li a.active::after,
 /* ---------- Co-op Reports Section ---------- */
 .coop-reports-section {
   padding: var(--space-4xl) var(--space-lg);
-  background:
-    linear-gradient(135deg, rgba(45, 52, 54, 0.04), rgba(156, 134, 108, 0.1)),
-    var(--background);
+  background: transparent;
 }
 
 .coop-shell {
@@ -1098,17 +1177,6 @@ nav ul li a.active::after,
     rgba(255, 255, 255, 0.58);
   background-size: 28px 28px;
   box-shadow: var(--shadow-lg);
-}
-
-.whiteboard-board::before {
-  content: 'co-op map';
-  position: absolute;
-  top: 1.15rem;
-  left: 1.35rem;
-  color: rgba(156, 134, 108, 0.5);
-  font-family: var(--font-display);
-  font-size: 1rem;
-  transform: rotate(-3deg);
 }
 
 .whiteboard-pin {
@@ -1524,7 +1592,7 @@ nav ul li a.active::after,
 
 /* Contact Hero */
 .contact-hero {
-  background: linear-gradient(180deg, var(--background) 0%, var(--background-alt) 100%);
+  background: transparent;
   padding: var(--space-4xl) var(--space-lg) var(--space-2xl);
   text-align: center;
 }
@@ -1546,7 +1614,7 @@ nav ul li a.active::after,
 /* Contact Main Section */
 .contact-main {
   padding: var(--space-3xl) var(--space-lg) var(--space-4xl);
-  background: var(--background-alt);
+  background: transparent;
 }
 
 .contact-wrapper {
@@ -1684,8 +1752,7 @@ nav ul li a.active::after,
 
 /* ---------- Co-op Report Page ---------- */
 .coop-report-page {
-  background:
-    linear-gradient(180deg, var(--background) 0%, var(--background-alt) 48%, var(--background) 100%);
+  background: transparent;
 }
 
 .report-hero {
@@ -2197,6 +2264,18 @@ nav ul li a.active::after,
   opacity: 0.7;
   cursor: not-allowed;
   transform: none;
+}
+
+.form-status {
+  min-height: 1.4rem;
+  color: var(--accent);
+  font-size: 0.86rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.form-status.is-error {
+  color: #a33a2f;
 }
 
 /* ==========================================
@@ -2995,7 +3074,7 @@ nav ul li a.active::after,
 }
 
 .skills-block {
-  background: var(--background-alt);
+  background: transparent;
   padding: var(--space-4xl) var(--space-lg);
 }
 

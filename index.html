@@ -69,7 +69,7 @@
           </h1>
           <p>
             I'm a third year Software Engineering co-op student at the University of Guelph
-            with an Area of Emphasis in Artificial Intelligence. I’m always learning something new, so feel free to explore and learn more about me!
+            with an Area of Emphasis in Artificial Intelligence. I’m always learning something new, so feel free to learn more about me!
           </p>
 
           <div class="hero-actions">
@@ -175,24 +175,21 @@
         <div class="coop-intro-grid">
           <article class="coop-intro playful-card whiteboard-note">
             <div class="coop-intro-topline">
-              <span class="coop-label">Introduction</span>
-              <span class="coop-current-pill">Current term</span>
+              <span class="coop-label">What is this section about?</span>
             </div>
-            <h3>Stories from each co-op term</h3>
-            <p>
-              Welcome to my co-op reports selection
-            </p>
+            <h3>Stories from Each Co-op Work Term</h3>
+            <a href = "summer-2026.html">
             <div class="coop-highlights" aria-label="Current co-op summary">
-              <span>Kenna</span>
-              <span>Web Applications</span>
-              <span>Summer 2026</span>
+              <span>
+                Summer 2026
+              </span>
             </div>
+            </a>
           </article>
 
           <a href="summer-2026.html" class="coop-term-card playful-card whiteboard-note feature-note" aria-label="Open Summer 2026 co-op report">
             <div class="coop-term-topline">
-              <span>Read the Report</span>
-              <span>01</span>
+              <span>Read Most Recent Report</span>
             </div>
             <div class="coop-term-main">
               <p>Summer</p>
@@ -471,7 +468,7 @@
         <div class="contact-form-wrapper playful-card">
           <h2>Send a Message</h2>
 
-          <form class="contact-form" action="https://formspree.io/f/xojanjqd" method="POST">
+          <form class="contact-form" data-contact-endpoint="/api/contact">
             <div class="form-row">
               <div class="form-group">
                 <label for="name">Your Name</label>
@@ -501,6 +498,7 @@
                 <path d="M22 2 11 13"/>
               </svg>
             </button>
+            <p class="form-status" aria-live="polite"></p>
           </form>
         </div>
       </div>
@@ -676,11 +674,70 @@
       document.body.style.setProperty('--cursor-y', `${event.clientY}px`);
     });
 
-    form.addEventListener('submit', () => {
+    function initScrollDownCues() {
+      const pageSections = Array.from(document.querySelectorAll('main > section'));
+      pageSections.slice(0, -1).forEach((section, index) => {
+        if (section.querySelector('.scroll-down-cue')) return;
+        const nextSection = pageSections[index + 1];
+        section.classList.add('has-scroll-cue');
+
+        const cue = document.createElement('button');
+        cue.type = 'button';
+        cue.className = 'scroll-down-cue';
+        cue.setAttribute('aria-label', 'Scroll down');
+        cue.innerHTML = '<span>Scroll down</span>';
+        cue.addEventListener('click', () => {
+          nextSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          if (nextSection.id) updateSectionPath(nextSection.id);
+        });
+
+        section.appendChild(cue);
+      });
+    }
+
+    async function submitContactForm(event) {
+      event.preventDefault();
       const btn = form.querySelector('.btn-submit');
+      const status = form.querySelector('.form-status');
+      const formData = new FormData(form);
+      const payload = {
+        name: String(formData.get('name') || '').trim(),
+        email: String(formData.get('email') || '').trim(),
+        subject: String(formData.get('subject') || '').trim(),
+        message: String(formData.get('message') || '').trim(),
+        page: window.location.pathname
+      };
+
       btn.innerHTML = '<span>Sending...</span>';
       btn.disabled = true;
-    });
+      status.classList.remove('is-error');
+      status.textContent = '';
+
+      try {
+        const response = await fetch(form.dataset.contactEndpoint || '/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+
+        const result = await response.json().catch(() => ({}));
+        if (!response.ok) throw new Error(result.error || 'Message could not be sent.');
+
+        form.reset();
+        status.textContent = result.delivery === 'stored'
+          ? 'Message received. Thank you!'
+          : 'Message sent. Thank you!';
+      } catch (error) {
+        status.classList.add('is-error');
+        status.textContent = 'Message could not be sent. Please try again later.';
+      } finally {
+        btn.innerHTML = '<span>Send Message</span><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>';
+        btn.disabled = false;
+      }
+    }
+
+    initScrollDownCues();
+    if (form) form.addEventListener('submit', submitContactForm);
   </script>
 </body>
 </html>

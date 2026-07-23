@@ -440,6 +440,26 @@
       document.body.style.setProperty('--cursor-y', `${event.clientY}px`);
     });
 
+    function initScrollDownCues() {
+      const pageSections = Array.from(document.querySelectorAll('main > section'));
+      pageSections.slice(0, -1).forEach((section, index) => {
+        if (section.querySelector('.scroll-down-cue')) return;
+        const nextSection = pageSections[index + 1];
+        section.classList.add('has-scroll-cue');
+
+        const cue = document.createElement('button');
+        cue.type = 'button';
+        cue.className = 'scroll-down-cue';
+        cue.setAttribute('aria-label', 'Scroll down');
+        cue.innerHTML = '<span>Scroll down</span>';
+        cue.addEventListener('click', () => {
+          nextSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        section.appendChild(cue);
+      });
+    }
+
     window.addEventListener('scroll', () => {
       const nav = document.querySelector('.top-nav');
       nav.classList.toggle('scrolled', window.scrollY > 50);
@@ -467,6 +487,7 @@
     }, { rootMargin: '-30% 0px -58% 0px', threshold: 0 });
 
     reportCards.forEach(card => tocObserver.observe(card));
+    initScrollDownCues();
   </script>
 </body>
 </html>

@@ -468,7 +468,11 @@
         <div class="contact-form-wrapper playful-card">
           <h2>Send a Message</h2>
 
-          <form class="contact-form" data-contact-endpoint="/api/contact">
+          <form class="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+            <input type="hidden" name="form-name" value="contact">
+            <p class="netlify-hidden" aria-hidden="true">
+              <label>Do not fill this out if you are human <input name="bot-field"></label>
+            </p>
             <div class="form-row">
               <div class="form-group">
                 <label for="name">Your Name</label>
@@ -700,13 +704,7 @@
       const btn = form.querySelector('.btn-submit');
       const status = form.querySelector('.form-status');
       const formData = new FormData(form);
-      const payload = {
-        name: String(formData.get('name') || '').trim(),
-        email: String(formData.get('email') || '').trim(),
-        subject: String(formData.get('subject') || '').trim(),
-        message: String(formData.get('message') || '').trim(),
-        page: window.location.pathname
-      };
+      formData.set('form-name', form.getAttribute('name'));
 
       btn.innerHTML = '<span>Sending...</span>';
       btn.disabled = true;
@@ -714,19 +712,16 @@
       status.textContent = '';
 
       try {
-        const response = await fetch(form.dataset.contactEndpoint || '/api/contact', {
+        const response = await fetch('/', {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(payload)
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams(formData).toString()
         });
 
-        const result = await response.json().catch(() => ({}));
-        if (!response.ok) throw new Error(result.error || 'Message could not be sent.');
+        if (!response.ok) throw new Error('Message could not be sent.');
 
         form.reset();
-        status.textContent = result.delivery === 'stored'
-          ? 'Message received. Thank you!'
-          : 'Message sent. Thank you!';
+        status.textContent = 'Message sent. Thank you!';
       } catch (error) {
         status.classList.add('is-error');
         status.textContent = 'Message could not be sent. Please try again later.';

@@ -2278,6 +2278,17 @@ nav ul li a.active::after,
   color: #a33a2f;
 }
 
+.netlify-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  border: 0;
+}
+
 /* ==========================================
    FOOTER - IMPROVED STYLES
    ========================================== */

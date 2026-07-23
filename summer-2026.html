@@ -13,7 +13,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="webstyle.css">
 </head>
 <body>
@@ -56,28 +56,37 @@
   <main class="coop-report-page">
     <section class="report-hero kenna-report-hero">
       <div class="report-hero-content">
-        <a href="index.html#coop-reports" class="report-back-link">Back to reports</a>
-        <p class="section-kicker">Co-op Work Term Report</p>
-        <h1>Summer 2026</h1>
-        <p class="report-hero-summary">
-          My first software co-op term at Kenna as a Web Applications Developer Co-op,
-          where I joined a professional development team, contributed to client-facing
-          web solutions, and learned how software supports real business needs.
-        </p>
-
-        <div class="report-hero-tags" aria-label="Report summary">
-          <span>Kenna</span>
-          <span>Web Applications</span>
-          <span>Mississauga</span>
+        <a href="index.html#coop-reports" class="report-back-link"> Back to reports</a>
+        <!-- <p class="section-kicker">Co-op Work Term Report</p> -->
+        <div class="report-title-row">
+          <h1 class="handwriting-title is-writing" tabindex="0" aria-label="Summer 2026. Activate to replay the handwriting animation.">
+            <svg class="handwriting-svg" viewBox="0 0 940 175" role="img" aria-hidden="true">
+              <defs>
+                <clipPath id="summer-title-clip" clipPathUnits="userSpaceOnUse">
+                  <text class="marker-text-mask" x="0" y="122">Summer 2026</text>
+                </clipPath>
+              </defs>
+              <g class="marker-stroke-layer" clip-path="url(#summer-title-clip)">
+                <path class="marker-fill-stroke stroke-1" pathLength="1" d="M -8 44 C 84 30, 155 31, 244 41 S 423 50, 522 38 S 730 30, 950 47" />
+                <path class="marker-fill-stroke stroke-2" pathLength="1" d="M -12 61 C 92 47, 179 49, 265 59 S 443 67, 538 55 S 749 48, 948 63" />
+                <path class="marker-fill-stroke stroke-3" pathLength="1" d="M -10 78 C 77 66, 155 65, 238 75 S 414 84, 518 72 S 744 65, 952 80" />
+                <path class="marker-fill-stroke stroke-4" pathLength="1" d="M -14 95 C 88 82, 171 83, 260 92 S 451 101, 551 89 S 755 82, 950 98" />
+                <path class="marker-fill-stroke stroke-5" pathLength="1" d="M -10 112 C 94 98, 178 101, 267 110 S 442 119, 548 106 S 746 99, 950 114" />
+                <path class="marker-fill-stroke stroke-6" pathLength="1" d="M -8 129 C 80 117, 159 116, 246 126 S 425 135, 532 122 S 740 116, 948 131" />
+                <path class="marker-fill-stroke stroke-7" pathLength="1" d="M 20 146 C 112 134, 196 136, 281 144 S 456 153, 558 141 S 754 135, 920 148" />
+              </g>
+            </svg>
+          </h1>
+          <img src="images/kenna.jpg" alt="Kenna logo" class="report-title-logo">
         </div>
       </div>
 
-      <div class="report-hero-panel report-brand-panel playful-card" aria-label="Kenna report overview">
+      <!-- <div class="report-hero-panel report-brand-panel playful-card" aria-label="Kenna report overview">
         <img src="images/kenna.jpg" alt="Kenna logo" class="report-brand-logo">
         <span class="report-panel-label">Current Term</span>
         <div class="report-panel-number">2026</div>
         <p>Web Applications Developer Co-op in a hybrid role at Kenna.</p>
-      </div>
+      </div> -->
     </section>
 
     <section class="report-layout" aria-label="Summer 2026 report content">
@@ -438,6 +447,21 @@
     document.addEventListener('pointermove', event => {
       document.body.style.setProperty('--cursor-x', `${event.clientX}px`);
       document.body.style.setProperty('--cursor-y', `${event.clientY}px`);
+    });
+
+    const handwritingTitle = document.querySelector('.handwriting-title');
+    function replayHandwritingTitle() {
+      if (!handwritingTitle || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      handwritingTitle.classList.remove('is-writing');
+      void handwritingTitle.offsetWidth;
+      handwritingTitle.classList.add('is-writing');
+    }
+
+    handwritingTitle?.addEventListener('click', replayHandwritingTitle);
+    handwritingTitle?.addEventListener('keydown', event => {
+      if (event.key !== 'Enter' && event.key !== ' ') return;
+      event.preventDefault();
+      replayHandwritingTitle();
     });
 
     function initScrollDownCues() {

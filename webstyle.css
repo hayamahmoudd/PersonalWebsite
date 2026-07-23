@@ -42,7 +42,8 @@
   --footer-bg: #3d3d3d;
   
   /* Typography */
-  --font-display: 'DM Serif Display', Georgia, serif;
+  --font-marker: 'Kalam', 'Comic Sans MS', cursive;
+  --font-display: 'Kalam', 'Comic Sans MS', cursive;
   --font-body: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   
   /* Spacing */
@@ -165,13 +166,13 @@ main > section {
 }
 
 .has-scroll-cue {
-  padding-bottom: max(var(--space-3xl), 5.75rem);
+  padding-bottom: max(var(--space-3xl), 6.25rem);
 }
 
 .scroll-down-cue {
   position: absolute;
   left: 50%;
-  bottom: 1.35rem;
+  bottom: 2rem;
   z-index: 5;
   width: 46px;
   height: 46px;
@@ -242,7 +243,7 @@ main > section {
 /* ---------- Typography ---------- */
 h1, h2, h3, h4 {
   font-family: var(--font-display);
-  font-weight: 400;
+  font-weight: 700;
   line-height: 1.2;
   color: var(--text-primary);
 }
@@ -263,7 +264,7 @@ h3 {
 h4 {
   font-size: 1.125rem;
   font-family: var(--font-body);
-  font-weight: 600;
+  font-weight: 700;
 }
 
 p {
@@ -337,8 +338,8 @@ p {
   inset: 0.22rem -0.35rem 0.16rem;
   z-index: -1;
   background: rgba(255, 255, 255, 0.72);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
+  /* border: 1px solid var(--border);
+  border-radius: var(--radius-sm); */
   transform: rotate(-2deg);
 }
 
@@ -519,7 +520,7 @@ nav ul li a.active::after,
 
 /* ---------- Hero Section ---------- */
 .hero {
-  padding: calc(80px + var(--space-4xl)) var(--space-lg) var(--space-4xl);
+  padding: calc(80px + var(--space-3xl)) var(--space-lg) var(--space-3xl);
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -536,12 +537,12 @@ nav ul li a.active::after,
   margin: 0 auto;
   display: grid;
   grid-template-columns: minmax(280px, 0.9fr) minmax(0, 1.1fr);
-  gap: var(--space-4xl);
+  gap: var(--space-3xl);
   align-items: center;
 }
 
 .hero-content::before {
-  content: 'start here';
+  /* content: 'start here'; */
   position: absolute;
   top: -2.3rem;
   right: 16%;
@@ -579,7 +580,6 @@ nav ul li a.active::after,
   z-index: 3;
   width: clamp(92px, 9vw, 124px);
   height: clamp(92px, 9vw, 124px);
-  /* background-image: var(--clip-pink); */
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
@@ -627,29 +627,30 @@ nav ul li a.active::after,
   display: inline-block;
   font-size: 0.875rem;
   font-weight: 600;
+  
   color: var(--accent);
   margin-bottom: var(--space-md);
   letter-spacing: 0.15em;
-  text-transform: uppercase;
+  text-transform: uppercase; 
 }
 
 .hero-text h1 {
   margin-bottom: var(--space-md);
-  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-size: clamp(2.35rem, 4.5vw, 3.25rem);
   overflow-wrap: break-word;
 }
 
 .hero-text h1 span {
   display: block;
   font-family: var(--font-body);
-  font-size: 1.125rem;
+  font-size: 1rem;
   font-weight: 400;
   color: var(--text-secondary);
   margin-top: var(--space-sm);
 }
 
 .hero-text p {
-  font-size: 1.0625rem;
+  font-size: 1rem;
   max-width: 500px;
   margin-bottom: var(--space-xl);
   line-height: 1.8;
@@ -720,7 +721,7 @@ nav ul li a.active::after,
 .report-hero-panel,
 .report-photo-card {
   --clip-size: 76px;
-  --clip-top: -2.35rem;
+  --clip-top: -2.55rem;
   --clip-rotate: -5deg;
   position: relative;
   overflow: visible;
@@ -731,37 +732,37 @@ nav ul li a.active::after,
 
 .experience-card {
   --clip-size: 86px;
-  --clip-top: -2.7rem;
+  --clip-top: -2.95rem;
 }
 
 .project-card {
-  --clip-size: 74px;
-  --clip-top: -2.25rem;
+  --clip-size: 62px;
+  --clip-top: -2.48rem;
 }
 
 .skills-card {
   --clip-size: 68px;
-  --clip-top: -2.05rem;
+  --clip-top: -2.28rem;
 }
 
 .contact-link-card {
-  --clip-size: 58px;
-  --clip-top: -1.72rem;
+  --clip-size: 46px;
+  --clip-top: -1.95rem;
 }
 
 .contact-form-wrapper {
   --clip-size: 82px;
-  --clip-top: -2.55rem;
+  --clip-top: -2.82rem;
 }
 
 .report-section-card {
   --clip-size: 84px;
-  --clip-top: -2.62rem;
+  --clip-top: -2.88rem;
 }
 
 .report-photo-card {
   --clip-size: 78px;
-  --clip-top: -2.42rem;
+  --clip-top: -2.68rem;
 }
 
 .experience-card::before,
@@ -1062,6 +1063,10 @@ nav ul li a.active::after,
   padding: var(--space-2xl) var(--space-lg);
   max-width: 1200px;
   margin: 0 auto;
+}
+
+.projects-section.has-scroll-cue {
+  padding-bottom: max(var(--space-4xl), 7.5rem);
 }
 
 .projects-grid {
@@ -1525,7 +1530,9 @@ nav ul li a.active::after,
 
 .project-card h4 {
   margin-bottom: var(--space-md);
-  font-size: 1.25rem;
+  font-family: var(--font-body);
+  font-size: 1.12rem;
+  font-weight: 800;
   transition: var(--transition);
 }
 
@@ -1593,8 +1600,16 @@ nav ul li a.active::after,
 /* Contact Hero */
 .contact-hero {
   background: transparent;
-  padding: var(--space-4xl) var(--space-lg) var(--space-2xl);
+  padding: var(--space-2xl) var(--space-lg) var(--space-lg);
   text-align: center;
+}
+
+.contact-page .contact-hero.has-scroll-cue {
+  padding-bottom: var(--space-lg);
+}
+
+.contact-page .contact-hero .scroll-down-cue {
+  display: none;
 }
 
 .contact-hero-content {
@@ -1617,6 +1632,10 @@ nav ul li a.active::after,
   background: transparent;
 }
 
+.contact-page .contact-main {
+  padding-top: var(--space-xl);
+}
+
 .contact-wrapper {
   max-width: 1100px;
   margin: 0 auto;
@@ -1634,8 +1653,8 @@ nav ul li a.active::after,
 
 .contact-direct h2 {
   font-family: var(--font-body);
-  font-size: 1.125rem;
-  font-weight: 600;
+  font-size: 1.05rem;
+  font-weight: 700;
   color: var(--accent);
   margin-bottom: var(--space-lg);
   letter-spacing: 0.02em;
@@ -1743,8 +1762,8 @@ nav ul li a.active::after,
 
 .contact-form-wrapper h2 {
   font-family: var(--font-body);
-  font-size: 1.125rem;
-  font-weight: 600;
+  font-size: 1.05rem;
+  font-weight: 700;
   color: var(--accent);
   margin-bottom: var(--space-xl);
   letter-spacing: 0.02em;
@@ -1756,11 +1775,12 @@ nav ul li a.active::after,
 }
 
 .report-hero {
-  min-height: 82vh;
-  padding: calc(80px + var(--space-4xl)) var(--space-lg) var(--space-3xl);
+  position: relative;
+  min-height: auto;
+  padding: calc(80px + var(--space-2xl)) var(--space-lg) var(--space-xl);
   display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.55fr);
-  gap: var(--space-3xl);
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-xl);
   align-items: center;
   max-width: 1160px;
   margin: 0 auto;
@@ -1774,15 +1794,177 @@ nav ul li a.active::after,
 }
 
 .report-hero-content h1 {
-  margin-bottom: var(--space-md);
-  font-size: clamp(3.2rem, 10vw, 7rem);
+  margin-bottom: 0;
+  font-size: clamp(3rem, 8.4vw, 6.1rem);
   overflow-wrap: break-word;
+}
+
+.report-hero.has-scroll-cue {
+  padding-bottom: var(--space-xl);
+}
+
+.report-hero .scroll-down-cue {
+  display: none;
+}
+
+.report-title-row {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+}
+
+.report-title-logo {
+  position: absolute;
+  top: calc(80px + var(--space-2xl) + 3.25rem);
+  right: clamp(2.5rem, 7vw, 7rem);
+  width: clamp(86px, 9vw, 124px);
+  height: clamp(86px, 9vw, 124px);
+  object-fit: contain;
+  padding: 0.72rem;
+  background: rgba(255, 255, 255, 0.76);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  transform: none;
+  pointer-events: none;
+}
+
+.handwriting-title {
+  flex: 0 1 auto;
+  width: min(100%, 760px);
+  min-width: 0;
+  cursor: pointer;
+  position: relative;
+  transform: rotate(-1deg);
+}
+
+.handwriting-svg {
+  display: block;
+  width: min(100%, 760px);
+  height: auto;
+  overflow: visible;
+}
+
+.marker-text-mask {
+  font-family: var(--font-marker);
+  font-size: 136px;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.marker-stroke-layer {
+  filter: drop-shadow(0 1px 0 rgba(45, 52, 54, 0.08));
+}
+
+.marker-fill-stroke {
+  fill: none;
+  stroke: var(--text-primary);
+  stroke-width: 25;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 0;
+  opacity: 0.98;
+}
+
+.stroke-2,
+.stroke-5 {
+  stroke-width: 23;
+}
+
+.stroke-3,
+.stroke-6 {
+  stroke-width: 27;
+}
+
+.handwriting-title.is-writing .marker-fill-stroke {
+  stroke-dashoffset: 1;
+  animation: markerStrokeWrite 1.8s cubic-bezier(0.58, 0.02, 0.18, 1) forwards;
+}
+
+.handwriting-title.is-writing .stroke-1 {
+  animation-delay: 0.18s;
+}
+
+.handwriting-title.is-writing .stroke-2 {
+  animation-delay: 0.32s;
+}
+
+.handwriting-title.is-writing .stroke-3 {
+  animation-delay: 0.46s;
+}
+
+.handwriting-title.is-writing .stroke-4 {
+  animation-delay: 0.6s;
+}
+
+.handwriting-title.is-writing .stroke-5 {
+  animation-delay: 0.74s;
+}
+
+.handwriting-title.is-writing .stroke-6 {
+  animation-delay: 0.88s;
+}
+
+.handwriting-title.is-writing .stroke-7 {
+  animation-delay: 1.02s;
+}
+
+.handwriting-title.is-writing::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 54%;
+  width: 0.95rem;
+  height: 2.8rem;
+  background: linear-gradient(180deg, var(--accent), rgba(156, 134, 108, 0.56));
+  border-radius: 999px 999px 0.25em 0.25em;
+  box-shadow: 0 0 0 0.12em rgba(156, 134, 108, 0.08);
+  transform: translate(0, -50%) rotate(-20deg);
+  transform-origin: center;
+  animation: markerTip 2.72s cubic-bezier(0.56, 0.08, 0.18, 1) 0.18s forwards;
+  pointer-events: none;
+}
+
+.handwriting-title:focus-visible {
+  outline: 3px solid var(--accent-light);
+  outline-offset: 0.15em;
+  border-radius: var(--radius-sm);
+}
+
+@keyframes markerStrokeWrite {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes markerTip {
+  0% {
+    left: 0;
+    opacity: 0;
+    transform: translateY(-50%) rotate(-18deg);
+  }
+  8% {
+    opacity: 1;
+  }
+  90% {
+    left: 98%;
+    opacity: 1;
+    transform: translateY(-50%) rotate(-15deg);
+  }
+  100% {
+    left: 100%;
+    opacity: 0;
+    transform: translateY(-50%) rotate(-15deg);
+  }
 }
 
 .report-hero-content > p:last-child,
 .report-hero-summary {
   max-width: 640px;
-  font-size: 1.08rem;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.75;
   overflow-wrap: break-word;
 }
 
@@ -2666,11 +2848,24 @@ nav ul li a.active::after,
 
   .report-hero {
     min-height: auto;
-    padding-bottom: var(--space-2xl);
+    padding-bottom: var(--space-xl);
   }
 
   .report-hero-content h1 {
-    font-size: clamp(2.8rem, 11vw, 4.6rem);
+    font-size: clamp(2.45rem, 10vw, 4.1rem);
+  }
+
+  .report-title-row {
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+  }
+
+  .report-title-logo {
+    position: static;
+    width: 68px;
+    height: 68px;
+    padding: 0.45rem;
   }
 
   .report-hero-content > p:last-child,
@@ -3195,35 +3390,35 @@ nav ul li a.active::after,
 
   .experience-card {
     --clip-size: 72px;
-    --clip-top: -2.22rem;
+    --clip-top: -2.48rem;
   }
 
   .project-card,
   .report-section-card {
-    --clip-size: 66px;
-    --clip-top: -2.02rem;
+    --clip-size: 54px;
+    --clip-top: -2.2rem;
   }
 
   .skills-card {
     --clip-size: 60px;
-    --clip-top: -1.82rem;
+    --clip-top: -2.05rem;
   }
 
   .contact-link-card {
-    --clip-size: 50px;
-    --clip-top: -1.42rem;
+    --clip-size: 40px;
+    --clip-top: -1.68rem;
   }
 
   .contact-form-wrapper,
   .coop-intro,
   .coop-term-card {
     --clip-size: 70px;
-    --clip-top: -2.12rem;
+    --clip-top: -2.35rem;
   }
 
   .report-photo-card {
     --clip-size: 64px;
-    --clip-top: -1.95rem;
+    --clip-top: -2.18rem;
   }
 
   .whiteboard-pin {

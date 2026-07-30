@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Haya Mahmoud | Resume</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      min-height: 100%;
+      background: #f5f5f5;
+    }
+
+    .resume-frame {
+      display: block;
+      width: 100vw;
+      height: 100vh;
+      border: 0;
+    }
+
+    .resume-fallback {
+      padding: 1rem;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <iframe class="resume-frame" title="Haya Mahmoud Resume"></iframe>
+  <p class="resume-fallback">
+    <a id="resume-download" href="HayaMahmoudResume.pdf">Open resume PDF</a>
+  </p>
+
+  <script>
+    const resumePath = window.location.protocol === 'file:' ? 'HayaMahmoudResume.pdf' : '/HayaMahmoudResume.pdf';
+    document.querySelector('.resume-frame').src = resumePath;
+    document.getElementById('resume-download').href = resumePath;
+  </script>
+</body>
+</html>

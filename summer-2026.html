@@ -9,7 +9,7 @@
   <meta property="og:title" content="Summer 2026 Co-op Report | Haya Mahmoud">
   <meta property="og:description" content="An interactive co-op work term report for Summer 2026 at Kenna.">
   <meta property="og:type" content="website">
-  <title>Summer 2026 Co-op Report | Haya Mahmoud</title>
+  <title>Haya Mahmoud | S26</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -46,7 +46,7 @@
           <li><a href="index.html" data-section="skills">Skills</a></li>
           <li><a href="index.html" data-section="contact">Contact</a></li>
           <li class="resume-link">
-            <a href="HayaMahmoudResume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+            <a href="resume.html" target="_blank" rel="noopener noreferrer">Resume</a>
           </li>
         </ul>
       </nav>
@@ -399,6 +399,10 @@
     function toggleMenu() {
       navMenu.classList.toggle('active');
     }
+
+    document.querySelectorAll('.resume-link a').forEach(link => {
+      if (window.location.protocol !== 'file:') link.href = '/resume.html';
+    });
 
     if (window.location.protocol !== 'file:' && window.location.pathname !== '/coop-reports/s26') {
       history.replaceState(null, '', '/coop-reports/s26');

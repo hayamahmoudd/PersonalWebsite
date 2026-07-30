@@ -9,7 +9,7 @@
   <meta property="og:title" content="Haya Mahmoud | Software Engineering">
   <meta property="og:description" content="Software Engineering Student specializing in AI. Building clean, user-focused software.">
   <meta property="og:type" content="website">
-  <title>Haya Mahmoud | Software Engineering</title>
+  <title>Haya Mahmoud | Home</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -46,7 +46,7 @@
           <li><a href="index.html" data-section="skills">Skills</a></li>
           <li><a href="index.html" data-section="contact">Contact</a></li>
           <li class="resume-link">
-            <a href="HayaMahmoudResume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+            <a href="resume.html" target="_blank" rel="noopener noreferrer">Resume</a>
           </li>
         </ul>
       </nav>
@@ -567,13 +567,26 @@
       skills: '/Skills',
       contact: '/Contact'
     };
+    const sectionTitles = {
+      home: 'Haya Mahmoud | Home',
+      experience: 'Haya Mahmoud | Experience',
+      'coop-reports': 'Haya Mahmoud | Co-op Reports',
+      projects: 'Haya Mahmoud | Projects',
+      skills: 'Haya Mahmoud | Skills',
+      contact: 'Haya Mahmoud | Contact'
+    };
     const pathSections = Object.fromEntries(Object.entries(sectionPaths).map(([section, path]) => [path.toLowerCase(), section]));
 
     function toggleMenu() {
       navMenu.classList.toggle('active');
     }
 
+    document.querySelectorAll('.resume-link a').forEach(link => {
+      if (window.location.protocol !== 'file:') link.href = '/resume.html';
+    });
+
     function updateSectionPath(sectionId, replace = false) {
+      if (sectionTitles[sectionId]) document.title = sectionTitles[sectionId];
       if (window.location.protocol === 'file:') return;
       const nextPath = sectionPaths[sectionId];
       if (!nextPath || window.location.pathname === nextPath) return;

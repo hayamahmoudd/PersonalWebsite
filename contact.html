@@ -7,7 +7,7 @@
   <meta name="keywords" content="Haya Mahmoud, Contact, Software Engineering">
   <meta name="author" content="Haya Mahmoud">
   
-  <title>Contact | Haya Mahmoud</title>
+  <title>Haya Mahmoud | Contact</title>
   
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -46,7 +46,7 @@
           <li><a href="index.html" data-section="skills">Skills</a></li>
           <li><a href="index.html" data-section="contact" class="active">Contact</a></li>
           <li class="resume-link">
-            <a href="HayaMahmoudResume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+            <a href="resume.html" target="_blank" rel="noopener noreferrer">Resume</a>
           </li>
         </ul>
       </nav>
@@ -243,6 +243,10 @@
     function toggleMenu() {
       document.getElementById('nav-menu').classList.toggle('active');
     }
+
+    document.querySelectorAll('.resume-link a').forEach(link => {
+      if (window.location.protocol !== 'file:') link.href = '/resume.html';
+    });
     
     // Close menu when clicking a link
     document.querySelectorAll('#nav-menu a').forEach(link => {

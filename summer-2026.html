@@ -33,18 +33,18 @@
 
       <nav aria-label="Main navigation">
         <ul id="nav-menu">
-          <li><a href="index.html" data-section="home">Home</a></li>
-          <li><a href="index.html" data-section="experience">Experience</a></li>
+          <li><a href="/Home/" data-section="home">Home</a></li>
+          <li><a href="/Experience/" data-section="experience">Experience</a></li>
           <li class="nav-dropdown active">
             <button class="nav-dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">Co-op Reports</button>
             <div class="nav-dropdown-menu" aria-label="Co-op report links">
-              <a href="index.html" data-section="coop-reports">Overview</a>
+              <a href="/coop-reports/" data-section="coop-reports">Overview</a>
               <a href="summer-2026.html" class="active">Summer 2026</a>
             </div>
           </li>
-          <li><a href="index.html" data-section="projects">Projects</a></li>
-          <li><a href="index.html" data-section="skills">Skills</a></li>
-          <li><a href="index.html" data-section="contact">Contact</a></li>
+          <li><a href="/Projects/" data-section="projects">Projects</a></li>
+          <li><a href="/Skills/" data-section="skills">Skills</a></li>
+          <li><a href="/Contact/" data-section="contact">Contact</a></li>
           <li class="resume-link">
             <a href="resume.html" target="_blank" rel="noopener noreferrer">Resume</a>
           </li>
@@ -56,29 +56,35 @@
   <main class="coop-report-page">
     <section class="report-hero kenna-report-hero">
       <div class="report-hero-content">
-        <a href="index.html#coop-reports" class="report-back-link"> Back </a>
+        <a href="/coop-reports/" class="report-back-link" data-section="coop-reports"> Back </a>
         <!-- <p class="section-kicker">Co-op Work Term Report</p> -->
         <div class="report-title-row">
           <h1 class="handwriting-title is-writing" tabindex="0" aria-label="Summer 2026. Activate to replay the handwriting animation.">
-            <svg class="handwriting-svg" viewBox="0 0 940 175" role="img" aria-hidden="true">
-              <defs>
-                <clipPath id="summer-title-clip" clipPathUnits="userSpaceOnUse">
-                  <text class="marker-text-mask" x="0" y="122">Summer 2026</text>
-                </clipPath>
-              </defs>
-              <g class="marker-stroke-layer" clip-path="url(#summer-title-clip)">
-                <path class="marker-fill-stroke stroke-1" pathLength="1" d="M -8 44 C 84 30, 155 31, 244 41 S 423 50, 522 38 S 730 30, 950 47" />
-                <path class="marker-fill-stroke stroke-2" pathLength="1" d="M -12 61 C 92 47, 179 49, 265 59 S 443 67, 538 55 S 749 48, 948 63" />
-                <path class="marker-fill-stroke stroke-3" pathLength="1" d="M -10 78 C 77 66, 155 65, 238 75 S 414 84, 518 72 S 744 65, 952 80" />
-                <path class="marker-fill-stroke stroke-4" pathLength="1" d="M -14 95 C 88 82, 171 83, 260 92 S 451 101, 551 89 S 755 82, 950 98" />
-                <path class="marker-fill-stroke stroke-5" pathLength="1" d="M -10 112 C 94 98, 178 101, 267 110 S 442 119, 548 106 S 746 99, 950 114" />
-                <path class="marker-fill-stroke stroke-6" pathLength="1" d="M -8 129 C 80 117, 159 116, 246 126 S 425 135, 532 122 S 740 116, 948 131" />
-                <path class="marker-fill-stroke stroke-7" pathLength="1" d="M 20 146 C 112 134, 196 136, 281 144 S 456 153, 558 141 S 754 135, 920 148" />
-              </g>
-            </svg>
+            <span class="draw-word" aria-hidden="true">
+              <span class="draw-letter" data-letter="S" style="--letter-delay: 0ms;">S</span>
+              <span class="draw-letter" data-letter="u" style="--letter-delay: 135ms;">u</span>
+              <span class="draw-letter" data-letter="m" style="--letter-delay: 270ms;">m</span>
+              <span class="draw-letter" data-letter="m" style="--letter-delay: 405ms;">m</span>
+              <span class="draw-letter" data-letter="e" style="--letter-delay: 540ms;">e</span>
+              <span class="draw-letter" data-letter="r" style="--letter-delay: 675ms;">r</span>
+              <span class="draw-space"></span>
+              <span class="draw-letter" data-letter="2" style="--letter-delay: 930ms;">2</span>
+              <span class="draw-letter" data-letter="0" style="--letter-delay: 1065ms;">0</span>
+              <span class="draw-letter" data-letter="2" style="--letter-delay: 1200ms;">2</span>
+              <span class="draw-letter" data-letter="6" style="--letter-delay: 1335ms;">6</span>
+            </span>
           </h1>
           <img src="images/kenna.jpg" alt="Kenna logo" class="report-title-logo">
         </div>
+
+        <nav class="report-toc" aria-label="Report sections">
+          <a href="/coop-reports/s26/introduction/" data-report-section="introduction" class="active">Introduction</a>
+          <a href="/coop-reports/s26/employer/" data-report-section="employer">Employer</a>
+          <a href="/coop-reports/s26/goals/" data-report-section="goals">Goals</a>
+          <a href="/coop-reports/s26/job-description/" data-report-section="job-description">Job Description</a>
+          <a href="/coop-reports/s26/conclusions/" data-report-section="conclusions">Conclusions</a>
+          <a href="/coop-reports/s26/acknowledgements/" data-report-section="acknowledgments">Acknowledgements</a>
+        </nav>
       </div>
 
       <!-- <div class="report-hero-panel report-brand-panel playful-card" aria-label="Kenna report overview">
@@ -90,21 +96,15 @@
     </section>
 
     <section class="report-layout" aria-label="Summer 2026 report content">
-      <aside class="report-toc" aria-label="Report sections">
-        <a href="/s26/introduction" data-report-section="introduction" class="active">Introduction</a>
-        <a href="/s26/employer" data-report-section="employer">Employer</a>
-        <a href="/s26/goals" data-report-section="goals">Goals</a>
-        <a href="/s26/job-description" data-report-section="job-description">Job Description</a>
-        <a href="/s26/conclusions" data-report-section="conclusions">Conclusions</a>
-        <a href="/s26/acknowledgements" data-report-section="acknowledgments">Acknowledgements</a>
-      </aside>
-
       <div class="report-sections">
-        <article class="report-section-card playful-card" id="introduction">
+        <article class="report-section-card" id="introduction">
+          <header class="report-page-heading">
+            <span class="report-section-count">01</span>
+            <h2>Introduction</h2>
+          </header>
+
           <div class="report-media-grid">
-            <div class="report-copy">
-              <span class="report-section-count">01</span>
-              <h2>Introduction</h2>
+            <section class="report-copy report-content-card report-copy-card">
               <p>
                 Welcome to my Summer 2026 co-op report about my experience as a Web
                 Applications Developer Co-op at Kenna.
@@ -123,7 +123,7 @@
               <p>
                 My time as a "Kennadian" gave me the opportunity to meet amazing people, strengthen my technical and communication skills, and gain valuable experience working as part of a professional software development team.
               </p>
-            </div>
+            </section>
 
             <figure class="report-photo-card">
               <img src="images/kennaoffice.jpg" alt="Kenna office space">
@@ -132,9 +132,11 @@
           </div>
         </article>
 
-        <article class="report-section-card playful-card" id="employer">
-          <span class="report-section-count">02</span>
-          <h2>Information About Kenna</h2>
+        <article class="report-section-card" id="employer">
+          <header class="report-page-heading">
+            <span class="report-section-count">02</span>
+            <h2>Information About Kenna</h2>
+          </header>
 
           <div class="employer-showcase">
             <figure class="report-photo-card">
@@ -142,28 +144,28 @@
               <figcaption>Some items from my welcome package that I got in the first week of my term</figcaption>
             </figure>
 
-            <div class="report-copy">
+            <section class="report-copy report-content-card report-copy-card">
               <h3>About Kenna</h3>
               <p>
                 Kenna is a Mississauga-based marketing solutions company that helps organizations create better and more connected experiences for their customers. 
                 Its work brings together strategy, data, technology, design, and marketing to support clients throughout the customer journey.
                 What interested me most about Kenna was how closely its creative and technical teams work together.
                 The company does more than build websites or marketing campaigns. 
-                It develops customized platforms, internal systems, data solutions, and digital experiences based on each client’s needs.
+                It develops customized platforms, internal systems, data solutions, and digital experiences based on each client's needs.
               </p>
               <p>
                 One thing that stood out to me was Kenna's people-first environment. The company places a strong
                 emphasis on <strong>Customer First Thinking</strong>, and I saw that same mindset reflected
                 in the way co-ops and full-time employees are supported.
               </p>
-            </div>
+            </section>
           </div>
 
           <div class="location-feature">
-            <div class="report-copy">
+            <section class="report-copy report-content-card report-copy-card">
               <h3>Location and Work Environment</h3>
               <p>
-                Kenna’s office is located at 90 Burnhamthorpe Road West in downtown Mississauga, just a five minute walk from Square One. The area is lively and convenient, with plenty of restaurants, public transit options, and places nearby to spend more of my paycheque than I probably should.
+                Kenna's office is located at 90 Burnhamthorpe Road West in downtown Mississauga, just a five minute walk from Square One. The area is lively and convenient, with plenty of restaurants, public transit options, and places nearby to spend more of my paycheque than I probably should.
               </p>
               <p>
                 I followed a hybrid schedule, working in the office on Tuesdays, Wednesdays, and Thursdays and 
@@ -171,7 +173,7 @@
                 The in-office days made it easier to collaborate, ask questions, and stay connected with the team, 
                 while the remote days gave me more uninterrupted time to focus on development work.
               </p>
-            </div>
+            </section>
 
             <figure class="report-photo-card location-photo">
               <img src="images/kennalounge.jpg" alt="Kenna lounge area">
@@ -180,12 +182,18 @@
           </div>
         </article>
 
-        <article class="report-section-card playful-card" id="goals">
-          <span class="report-section-count">03</span>
-          <h2>Goals</h2>
-          <p>
-          These learning goals shaped how I approached my Summer 2026 co-op term. They helped me focus not only on what I hoped to learn from my time at Kenna, but also on how I could make a meaningful contribution to the team.          
-          </p>
+        <article class="report-section-card" id="goals">
+          <header class="report-page-heading">
+            <span class="report-section-count">03</span>
+            <h2>Goals</h2>
+          </header>
+
+          <section class="report-content-card report-copy-card">
+            <p>
+              These learning goals shaped how I approached my Summer 2026 co-op term. They helped me focus not only on what I hoped to learn from my time at Kenna, but also on how I could make a meaningful contribution to the team.
+            </p>
+          </section>
+
           <div class="goal-grid">
             <section>
               <span class="goal-category">Professional &amp; Ethical Behaviour - Teamwork</span>
@@ -206,9 +214,9 @@
                   Contribute more confidently in team discussions, complete assigned tasks with
                   fewer revisions, and receive positive feedback from my supervisor and team.
                 </p>
-                <h5>
+                <h4>
                   Reflection
-                </h5>
+                </h4>
                 <p>
                   Add reflection at the end of the term.
                 </p>
@@ -304,7 +312,7 @@
                   Make updates and documentation clear enough for others to follow, with fewer
                   follow-up questions about the purpose and impact of my work.
                 </p>
-                <h4>Relection</h4>
+                <h4>Reflection</h4>
                 <p>
                   Add reflection at the end of the term.
                 </p>
@@ -313,14 +321,14 @@
           </div>
         </article>
 
-        <article class="report-section-card playful-card job-description-report" id="job-description">
-          <div class="job-posting-header">
+        <article class="report-section-card job-description-report" id="job-description">
+          <header class="report-page-heading job-posting-header">
             <span class="report-section-count">04</span>
             <img src="images/kenna.jpg" alt="Kenna logo">
             <div>
               <h2>Job Description</h2>
             </div>
-          </div>
+          </header>
 
           <div class="job-posting-card">
             <div class="posting-title-row">
@@ -435,85 +443,101 @@
           </section>
         </article>
 
-        <article class="report-section-card playful-card" id="conclusions">
-          <span class="report-section-count">05</span>
-          <h2>Conclusions</h2>
-          <p>
-            In Summer 2026, I was given an amazing opportunity to begin my career at a company I truly wanted to be part of. After speaking with former co-op students and current Kenna employees, I had a strong feeling that Kenna would be the right place for me, and looking back on the past four months, I am grateful that I trusted that feeling.
-          </p>
-          <br>
-          <p>
-            Throughout the term, I grew not only as a developer, but also as a person. I strengthened my technical skills, became more confident in my work, and developed a stronger mindset when facing challenges. Working with people outside the development team, including the accounts, data, and QA teams, also improved my communication skills and helped me understand how software is built and supported in a real industry environment.
-          </p>
-         </br>
-         <br>
-         <p>
-          One of the best parts of the experience was meeting more than 20 other co-op students, many of whom were fellow Gryphons. I built friendships that I hope will continue through school and beyond this work term. It was also extremely rewarding to see my work used by more than <strong>20,000</strong> users across Canada and the United States. Knowing that something I contributed to had a real impact made me even more excited to continue pursuing a career in software development.
-         </p>
-        </br>
-          <p>
-            Most importantly, this work term gave me the confidence to truly see myself as a developer. I am leaving Kenna with stronger skills, better work habits, meaningful connections, a deeper appreciation for the people and teamwork behind great software, and, of course, the title of being a Kennadian!
-          </p>
+        <article class="report-section-card" id="conclusions">
+          <header class="report-page-heading">
+            <span class="report-section-count">05</span>
+            <h2>Conclusions</h2>
+          </header>
+
+          <section class="report-content-card report-copy-card">
+            <p>
+              In Summer 2026, I was given an amazing opportunity to begin my career at a company I truly wanted to be part of. After speaking with former co-op students and current Kenna employees, I had a strong feeling that Kenna would be the right place for me, and looking back on the past four months, I am grateful that I trusted that feeling.
+            </p>
+            <p>
+              Throughout the term, I grew not only as a developer, but also as a person. I strengthened my technical skills, became more confident in my work, and developed a stronger mindset when facing challenges. Working with people outside the development team, including the accounts, data, and QA teams, also improved my communication skills and helped me understand how software is built and supported in a real industry environment.
+            </p>
+            <p>
+              One of the best parts of the experience was meeting more than 20 other co-op students, many of whom were fellow Gryphons. I built friendships that I hope will continue through school and beyond this work term. It was also extremely rewarding to see my work used by more than <strong>20,000</strong> users across Canada and the United States. Knowing that something I contributed to had a real impact made me even more excited to continue pursuing a career in software development.
+            </p>
+            <p>
+              Most importantly, this work term gave me the confidence to truly see myself as a developer. I am leaving Kenna with stronger skills, better work habits, meaningful connections, a deeper appreciation for the people and teamwork behind great software, and, of course, the title of being a Kennadian!
+            </p>
+          </section>
         </article>
         
-        <article class="report-section-card playful-card" id="acknowledgments">
-          <span class="report-section-count">06</span>
-          <h2>Acknowledgements</h2>
+        <article class="report-section-card" id="acknowledgments">
+          <header class="report-page-heading">
+            <span class="report-section-count">06</span>
+            <h2>Acknowledgements</h2>
+          </header>
 
-          <p>
-            I would like to start by thanking Nicholas Paul for taking the time to hear
-            me out and interview me for this position at Kenna. Without his support, I
-            would not have had the opportunity to become a Kennadian.
-          </p>
+          <section class="report-content-card report-copy-card">
+            <p>
+              I would like to start by thanking Nicholas Paul for taking the time to hear
+              me out and interview me for this position at Kenna. Without his support, I
+              would not have had the opportunity to become a Kennadian.
+            </p>
 
-          <p>
-            I would also like to thank Zeal Vyas from HR, who supported me throughout
-            the entire process, from scheduling my interview and helping with onboarding
-            to answering my many questions and directing me to the right people. I also
-            want to congratulate Zeal on her new baby and wish her all the best during
-            her maternity leave.
-          </p>
+            <p>
+              I would also like to thank Zeal Vyas from HR, who supported me throughout
+              the entire process, from scheduling my interview and helping with onboarding
+              to answering my many questions and directing me to the right people. I also
+              want to congratulate Zeal on her new baby and wish her all the best during
+              her maternity leave.
+            </p>
 
-          <p>
-            A special thank you to my supervisor, Chandra Kottam, Senior Application
-            Developer, for trusting me with challenging tasks and giving me the space to
-            make mistakes, learn from them, and improve. I am also grateful to our team
-            lead, Manish Lakhotia, for always including me in team discussions and
-            asking for my input, even though I was only a co-op student.
-          </p>
+            <p>
+              A special thank you to my supervisor, Chandra Kottam, Senior Application
+              Developer, for trusting me with challenging tasks and giving me the space to
+              make mistakes, learn from them, and improve. I am also grateful to our team
+              lead, Manish Lakhotia, for always including me in team discussions and
+              asking for my input, even though I was only a co-op student.
+            </p>
 
-          <p>
-            Thank you to the Social Committee for organizing so many great events,
-            especially Thirsty Thursdays. Their planning helped me build closer
-            relationships with my coworkers and gave everyone a reason to step away from
-            their screens for a while.
-          </p>
+            <p>
+              Thank you to the Social Committee for organizing so many great events,
+              especially Thirsty Thursdays. Their planning helped me build closer
+              relationships with my coworkers and gave everyone a reason to step away from
+              their screens for a while.
+            </p>
 
-          <p>
-            I would also like to thank Sara Beshr, Finance Assistant, for always
-            reminding us to submit our timesheets. Without her reminders, there is a
-            very good chance at least one of my paycheques would have arrived late.
-          </p>
+            <p>
+              I would also like to thank Sara Beshr, Finance Assistant, for always
+              reminding us to submit our timesheets. Without her reminders, there is a
+              very good chance at least one of my paycheques would have arrived late.
+            </p>
 
-          <p>
-            A very special thank you goes to my fellow co-op students for making Kenna
-            feel fun, welcoming, and inclusive. They made coming into the office
-            something I genuinely looked forward to. I also have them to thank for
-            teaching me how to play President, which means I am now rarely the Bum.
-          </p>
+            <p>
+              A very special thank you goes to my fellow co-op students for making Kenna
+              feel fun, welcoming, and inclusive. They made coming into the office
+              something I genuinely looked forward to. I also have them to thank for
+              teaching me how to play President, which means I am now rarely the Bum.
+            </p>
 
-          <p>
-            I would also like to thank Werner Anders, Director of Application
-            Development, for being approachable, keeping us informed about what was
-            happening within the company, and making leadership feel accessible.
-          </p>
+            <p>
+              I would also like to thank Werner Anders, Director of Application
+              Development, for being approachable, keeping us informed about what was
+              happening within the company, and making leadership feel accessible.
+            </p>
 
-          <p>
-            Finally, thank you to everyone else who supported me during my term. I truly
-            enjoyed my time at Kenna, and I hope to cross paths with my fellow
-            Kennadians again in the future.
-          </p>
+            <p>
+              Finally, thank you to everyone else who supported me during my term. I truly
+              enjoyed my time at Kenna, and I hope to cross paths with my fellow
+              Kennadians again in the future.
+            </p>
+          </section>
         </article>
+
+        <nav class="report-pager" aria-label="Report page navigation">
+          <a href="/coop-reports/s26/introduction/" class="report-pager-link report-pager-prev" data-report-prev>
+            <span>Previous</span>
+            <strong>Introduction</strong>
+          </a>
+          <a href="/coop-reports/s26/employer/" class="report-pager-link report-pager-next" data-report-next>
+            <span>Next</span>
+            <strong>Employer</strong>
+          </a>
+        </nav>
       </div>
     </section>
   </main>
@@ -545,12 +569,12 @@
       </div>
 
       <nav class="footer-nav" aria-label="Footer navigation">
-        <a href="index.html" data-section="home">Home</a>
-        <a href="index.html" data-section="experience">Experience</a>
-        <a href="index.html" data-section="coop-reports">Co-op Reports</a>
-        <a href="index.html" data-section="projects">Projects</a>
-        <a href="index.html" data-section="skills">Skills</a>
-        <a href="index.html" data-section="contact">Contact</a>
+        <a href="/Home/" data-section="home">Home</a>
+        <a href="/Experience/" data-section="experience">Experience</a>
+        <a href="/coop-reports/" data-section="coop-reports">Co-op Reports</a>
+        <a href="/Projects/" data-section="projects">Projects</a>
+        <a href="/Skills/" data-section="skills">Skills</a>
+        <a href="/Contact/" data-section="contact">Contact</a>
       </nav>
     </div>
 
@@ -562,20 +586,25 @@
   <script>
     const navMenu = document.getElementById('nav-menu');
     const progress = document.querySelector('.scroll-progress');
+    const reportPage = document.querySelector('.coop-report-page');
+    const reportLayout = document.querySelector('.report-layout');
+    const reportSectionsContainer = document.querySelector('.report-sections');
     const reportCards = document.querySelectorAll('.report-section-card');
     const tocLinks = document.querySelectorAll('.report-toc a');
     const navDropdowns = document.querySelectorAll('.nav-dropdown');
     const dropdownToggles = document.querySelectorAll('.nav-dropdown-toggle');
-    const reportBasePath = '/s26';
-    const reportSectionIds = Array.from(reportCards).map(card => card.id);
-    const reportSectionPaths = {
-      introduction: `${reportBasePath}/introduction`,
-      employer: `${reportBasePath}/employer`,
-      goals: `${reportBasePath}/goals`,
-      'job-description': `${reportBasePath}/job-description`,
-      conclusions: `${reportBasePath}/conclusions`,
-      acknowledgments: `${reportBasePath}/acknowledgements`
-    };
+    const pagerPrev = document.querySelector('[data-report-prev]');
+    const pagerNext = document.querySelector('[data-report-next]');
+    const reportSections = [
+      { id: 'introduction', label: 'Introduction', path: '/coop-reports/s26/introduction/' },
+      { id: 'employer', label: 'Employer', path: '/coop-reports/s26/employer/' },
+      { id: 'goals', label: 'Goals', path: '/coop-reports/s26/goals/' },
+      { id: 'job-description', label: 'Job Description', path: '/coop-reports/s26/job-description/' },
+      { id: 'conclusions', label: 'Conclusions', path: '/coop-reports/s26/conclusions/' },
+      { id: 'acknowledgments', label: 'Acknowledgements', path: '/coop-reports/s26/acknowledgements/' }
+    ];
+    const reportSectionIds = reportSections.map(section => section.id);
+    const reportSectionPaths = Object.fromEntries(reportSections.map(section => [section.id, section.path]));
     const reportPathSections = {
       introduction: 'introduction',
       employer: 'employer',
@@ -585,6 +614,9 @@
       acknowledgments: 'acknowledgments',
       acknowledgements: 'acknowledgments'
     };
+    const reduceMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let activeReportSectionId = '';
+    let isReportTransitioning = false;
 
     function toggleMenu() {
       navMenu.classList.toggle('active');
@@ -594,34 +626,139 @@
       if (window.location.protocol !== 'file:') link.href = '/resume.html';
     });
 
+    function getReportHref(sectionId) {
+      if (window.location.protocol === 'file:') {
+        return `summer-2026.html?reportSection=${encodeURIComponent(sectionId)}`;
+      }
+
+      return reportSectionPaths[sectionId] || reportSectionPaths.introduction;
+    }
+
     function setReportPath(sectionId, replace = false) {
+      const nextPath = getReportHref(sectionId);
       if (window.location.protocol === 'file:') return;
-      const nextPath = reportSectionPaths[sectionId] || reportSectionPaths.introduction;
       if (window.location.pathname === nextPath) return;
-      history[replace ? 'replaceState' : 'pushState'](null, '', nextPath);
+      history[replace ? 'replaceState' : 'pushState']({ reportSection: sectionId }, '', nextPath);
     }
 
-    function scrollToReportSection(sectionId, behavior = 'smooth', replace = false) {
-      const section = document.getElementById(sectionId);
-      if (!section) return;
-      section.scrollIntoView({ behavior, block: 'start' });
-      setReportPath(sectionId, replace);
+    function getRouteSection() {
+      const querySection = new URLSearchParams(window.location.search).get('reportSection');
+      const pathPart = window.location.pathname.replace(/\/$/, '').split('/').pop();
+      return reportPathSections[querySection] || reportPathSections[pathPart] || 'introduction';
     }
 
-    const pathSection = window.location.pathname.replace(/\/$/, '').split('/').pop();
-    const querySection = new URLSearchParams(window.location.search).get('reportSection');
-    const initialReportSection = reportPathSections[querySection] || reportPathSections[pathSection] || '';
+    function updateReportPager(sectionId) {
+      const sectionIndex = reportSectionIds.indexOf(sectionId);
+      const previousSection = reportSections[sectionIndex - 1];
+      const nextSection = reportSections[sectionIndex + 1];
 
-    if (window.location.protocol !== 'file:' && !window.location.pathname.startsWith(reportBasePath)) {
-      history.replaceState(null, '', reportSectionPaths.introduction);
+      [pagerPrev, pagerNext].forEach(link => {
+        if (!link) return;
+        link.removeAttribute('aria-disabled');
+        link.removeAttribute('tabindex');
+      });
+
+      if (pagerPrev) {
+        if (previousSection) {
+          pagerPrev.href = getReportHref(previousSection.id);
+          pagerPrev.dataset.reportSection = previousSection.id;
+          pagerPrev.querySelector('strong').textContent = previousSection.label;
+          pagerPrev.hidden = false;
+        } else {
+          pagerPrev.hidden = true;
+        }
+      }
+
+      if (pagerNext) {
+        if (nextSection) {
+          pagerNext.href = getReportHref(nextSection.id);
+          pagerNext.dataset.reportSection = nextSection.id;
+          pagerNext.querySelector('strong').textContent = nextSection.label;
+          pagerNext.hidden = false;
+        } else {
+          pagerNext.hidden = true;
+        }
+      }
     }
+
+    function renderReportSection(sectionId) {
+      reportPage.classList.add('is-paged');
+      reportCards.forEach(card => {
+        const isActive = card.id === sectionId;
+        card.hidden = !isActive;
+        card.classList.toggle('is-active', isActive);
+        card.classList.toggle('is-visible', isActive);
+      });
+
+      tocLinks.forEach(link => {
+        const isActive = link.dataset.reportSection === sectionId;
+        link.classList.toggle('active', isActive);
+        if (isActive) {
+          link.setAttribute('aria-current', 'page');
+        } else {
+          link.removeAttribute('aria-current');
+        }
+        link.href = getReportHref(link.dataset.reportSection);
+      });
+
+      updateReportPager(sectionId);
+      activeReportSectionId = sectionId;
+    }
+
+    function getReportDirection(nextSectionId) {
+      const currentIndex = reportSectionIds.indexOf(activeReportSectionId);
+      const nextIndex = reportSectionIds.indexOf(nextSectionId);
+      return currentIndex > nextIndex ? 'prev' : 'next';
+    }
+
+    function wait(ms) {
+      return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+    async function showReportSection(sectionId, options = {}) {
+      const { replace = false, scroll = true, updateUrl = true, animate = false, direction = '' } = options;
+      const safeSectionId = reportSectionIds.includes(sectionId) ? sectionId : 'introduction';
+      const currentCard = activeReportSectionId ? document.getElementById(activeReportSectionId) : null;
+      const nextCard = document.getElementById(safeSectionId);
+      const shouldFlip = animate && currentCard && nextCard && currentCard !== nextCard && !reduceMotionQuery.matches;
+
+      if (isReportTransitioning) return;
+
+      if (!shouldFlip) {
+        renderReportSection(safeSectionId);
+        if (updateUrl) setReportPath(safeSectionId, replace);
+        if (scroll) reportLayout.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        return;
+      }
+
+      isReportTransitioning = true;
+      const flipDirection = direction || getReportDirection(safeSectionId);
+
+      reportPage.classList.add('is-flipping');
+      reportSectionsContainer.classList.add(`is-page-exit-${flipDirection}`);
+      await wait(420);
+      reportSectionsContainer.classList.remove(`is-page-exit-${flipDirection}`);
+      renderReportSection(safeSectionId);
+      reportSectionsContainer.classList.add(`is-page-enter-${flipDirection}`);
+      if (updateUrl) setReportPath(safeSectionId, replace);
+      if (scroll) reportLayout.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      await wait(460);
+
+      reportSectionsContainer.classList.remove(`is-page-enter-${flipDirection}`);
+      reportPage.classList.remove('is-flipping');
+      isReportTransitioning = false;
+    }
+
+    const initialReportSection = getRouteSection();
 
     document.querySelectorAll('a[data-section]').forEach(link => {
       link.addEventListener('click', event => {
         event.preventDefault();
         navMenu.classList.remove('active');
+        navDropdowns.forEach(dropdown => dropdown.classList.remove('open'));
+        dropdownToggles.forEach(toggle => toggle.setAttribute('aria-expanded', 'false'));
         sessionStorage.setItem('targetSection', link.dataset.section);
-        window.location.href = window.location.protocol === 'file:' ? link.getAttribute('href') : '/index.html';
+        window.location.href = window.location.protocol === 'file:' ? `index.html?section=${link.dataset.section}` : link.href;
       });
     });
 
@@ -635,16 +772,29 @@
 
     document.querySelectorAll('a[href="summer-2026.html"]').forEach(link => {
       link.addEventListener('click', event => {
-        if (window.location.protocol === 'file:') return;
         event.preventDefault();
-        window.location.href = '/s26/introduction';
+        window.location.href = getReportHref('introduction');
       });
     });
 
-    tocLinks.forEach(link => {
+    document.querySelectorAll('[data-report-section]').forEach(link => {
       link.addEventListener('click', event => {
         event.preventDefault();
-        scrollToReportSection(link.dataset.reportSection);
+        navMenu.classList.remove('active');
+        navDropdowns.forEach(dropdown => dropdown.classList.remove('open'));
+        dropdownToggles.forEach(toggle => toggle.setAttribute('aria-expanded', 'false'));
+        showReportSection(link.dataset.reportSection);
+      });
+    });
+
+    [pagerPrev, pagerNext].forEach(link => {
+      link?.addEventListener('click', event => {
+        if (!link.dataset.reportSection) return;
+        event.preventDefault();
+        showReportSection(link.dataset.reportSection, {
+          animate: true,
+          direction: link === pagerPrev ? 'prev' : 'next'
+        });
       });
     });
 
@@ -712,28 +862,13 @@
       progress.style.width = `${progressWidth}%`;
     });
 
-    const revealObserver = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('is-visible');
-      });
-    }, { threshold: 0.14 });
+    window.addEventListener('popstate', () => {
+      showReportSection(getRouteSection(), { replace: true, scroll: false, updateUrl: false });
+    });
 
-    reportCards.forEach(card => revealObserver.observe(card));
-
-    const tocObserver = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        tocLinks.forEach(link => link.classList.remove('active'));
-        const activeLink = document.querySelector(`.report-toc a[data-report-section="${entry.target.id}"]`);
-        if (activeLink) activeLink.classList.add('active');
-        setReportPath(entry.target.id, true);
-      });
-    }, { rootMargin: '-30% 0px -58% 0px', threshold: 0 });
-
-    reportCards.forEach(card => tocObserver.observe(card));
-    if (initialReportSection) {
-      requestAnimationFrame(() => scrollToReportSection(initialReportSection, 'auto', true));
-    }
+    requestAnimationFrame(() => {
+      showReportSection(initialReportSection, { replace: true, scroll: false });
+    });
     initScrollDownCues();
   </script>
 </body>

@@ -33,18 +33,18 @@
 
       <nav aria-label="Main navigation">
         <ul id="nav-menu">
-          <li><a href="index.html" data-section="home" class="active">Home</a></li>
-          <li><a href="index.html" data-section="experience">Experience</a></li>
+          <li><a href="/Home/" data-section="home" class="active">Home</a></li>
+          <li><a href="/Experience/" data-section="experience">Experience</a></li>
           <li class="nav-dropdown">
             <button class="nav-dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">Co-op Reports</button>
             <div class="nav-dropdown-menu" aria-label="Co-op report links">
-              <a href="index.html" data-section="coop-reports">Overview</a>
-              <a href="summer-2026.html">Summer 2026</a>
+              <a href="/coop-reports/" data-section="coop-reports">Overview</a>
+              <a href="/coop-reports/s26/introduction/">Summer 2026</a>
             </div>
           </li>
-          <li><a href="index.html" data-section="projects">Projects</a></li>
-          <li><a href="index.html" data-section="skills">Skills</a></li>
-          <li><a href="index.html" data-section="contact">Contact</a></li>
+          <li><a href="/Projects/" data-section="projects">Projects</a></li>
+          <li><a href="/Skills/" data-section="skills">Skills</a></li>
+          <li><a href="/Contact/" data-section="contact">Contact</a></li>
           <li class="resume-link">
             <a href="resume.html" target="_blank" rel="noopener noreferrer">Resume</a>
           </li>
@@ -178,7 +178,7 @@
               <span class="coop-label">What is this section about?</span>
             </div>
             <h3>Stories from Each Co-op Work Term</h3>
-            <a href = "summer-2026.html">
+            <a href="/coop-reports/s26/introduction/">
             <div class="coop-highlights" aria-label="Current co-op summary">
               <span>
                 Summer 2026
@@ -187,7 +187,7 @@
             </a>
           </article>
 
-          <a href="summer-2026.html" class="coop-term-card playful-card whiteboard-note feature-note" aria-label="Open Summer 2026 co-op report">
+          <a href="/coop-reports/s26/introduction/" class="coop-term-card playful-card whiteboard-note feature-note" aria-label="Open Summer 2026 co-op report">
             <div class="coop-term-topline">
               <span>Read Most Recent Report</span>
             </div>
@@ -536,12 +536,12 @@
       </div>
 
       <nav class="footer-nav" aria-label="Footer navigation">
-        <a href="index.html" data-section="home">Home</a>
-        <a href="index.html" data-section="experience">Experience</a>
-        <a href="index.html" data-section="coop-reports">Co-op Reports</a>
-        <a href="index.html" data-section="projects">Projects</a>
-        <a href="index.html" data-section="skills">Skills</a>
-        <a href="index.html" data-section="contact">Contact</a>
+        <a href="/Home/" data-section="home">Home</a>
+        <a href="/Experience/" data-section="experience">Experience</a>
+        <a href="/coop-reports/" data-section="coop-reports">Co-op Reports</a>
+        <a href="/Projects/" data-section="projects">Projects</a>
+        <a href="/Skills/" data-section="skills">Skills</a>
+        <a href="/Contact/" data-section="contact">Contact</a>
       </nav>
     </div>
 
@@ -619,11 +619,12 @@
       });
     });
 
-    document.querySelectorAll('a[href="summer-2026.html"]').forEach(link => {
+    document.querySelectorAll('a[href="summer-2026.html"], a[href="/coop-reports/s26/introduction/"]').forEach(link => {
       link.addEventListener('click', event => {
-        if (window.location.protocol === 'file:') return;
         event.preventDefault();
-        window.location.href = '/s26/introduction';
+        window.location.href = window.location.protocol === 'file:'
+          ? 'summer-2026.html?reportSection=introduction'
+          : '/coop-reports/s26/introduction/';
       });
     });
 

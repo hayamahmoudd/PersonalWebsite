@@ -652,6 +652,11 @@ The asset export tool that I built from scratch also required me to create a Con
   </footer>
 
   <script>
+    // Keep deferred image requests anchored to this file when report routes change.
+    document.querySelectorAll('img[src]').forEach(image => {
+      image.src = new URL(image.getAttribute('src'), document.baseURI).href;
+    });
+
     const navMenu = document.getElementById('nav-menu');
     const progress = document.querySelector('.scroll-progress');
     const reportPage = document.querySelector('.coop-report-page');

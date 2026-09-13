@@ -2272,6 +2272,7 @@ nav ul li a.active::after,
 .report-pager-link {
   min-height: 96px;
   padding: var(--space-lg);
+  padding-left: max(var(--space-lg), 32px);
   display: grid;
   align-content: center;
   gap: 0.2rem;
@@ -2432,6 +2433,32 @@ nav ul li a.active::after,
 
 .location-photo img {
   object-position: center 38%;
+}
+
+.report-photo-card.coop-group-photo {
+  width: min(100%, 820px);
+  margin: var(--space-3xl) auto 0;
+  padding: clamp(0.65rem, 2vw, 1rem);
+  background: #fffaf9;
+}
+
+.report-photo-card.coop-group-photo::before {
+  background-image: var(--clip-pink);
+  --clip-rotate: -7deg;
+}
+
+.report-photo-card.coop-group-photo img {
+  height: auto;
+  aspect-ratio: auto;
+  border-radius: var(--radius-sm);
+}
+
+.report-photo-card.coop-group-photo figcaption {
+  padding: var(--space-md) var(--space-xs) var(--space-xs);
+  font-family: var(--font-marker);
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  font-weight: 400;
+  text-align: center;
 }
 
 .goal-grid {
@@ -4217,8 +4244,8 @@ nav ul li a.active::after,
   .nav-dropdown-toggle {
     padding-bottom: 0;
     color: var(--text-primary);
-    font-size: 1.25rem;
-    font-weight: 700;
+    font-size: 1.125rem;
+    font-weight: 500;
   }
 
   .nav-dropdown-menu {
@@ -4317,4 +4344,103 @@ nav ul li a.active::after,
   .report-section-card h2 {
     margin-top: var(--space-sm);
   }
+}
+
+/* Shared responsive navigation and content sizing. */
+button, input, textarea, select { font-family: var(--font-body); }
+.report-menu-toggle { display: none; }
+.mobile-drawer {
+  position: fixed;
+  inset: 0 0 0 auto;
+  width: min(88vw, 360px);
+  max-width: 100%;
+  height: 100%;
+  height: 100dvh;
+  max-height: 100dvh;
+  margin: 0;
+  padding: max(1rem, env(safe-area-inset-top)) 1rem max(1rem, env(safe-area-inset-bottom));
+  border: 0;
+  border-left: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text-primary);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  box-shadow: var(--shadow-xl);
+}
+.mobile-drawer::backdrop { background: rgba(45, 52, 54, 0.4); }
+body.drawer-open { overflow: hidden; }
+.drawer-heading { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-bottom: 1rem; }
+.drawer-close { width: 44px; height: 44px; font-size: 1.75rem; background: var(--background); border: 1px solid var(--border); border-radius: var(--radius-sm); cursor: pointer; }
+.mobile-drawer #nav-menu,
+.mobile-drawer .report-toc {
+  position: static;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  gap: 0.35rem;
+  width: 100%;
+  max-width: none;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  box-shadow: none;
+  overflow: visible;
+  backdrop-filter: none;
+}
+.mobile-drawer #nav-menu > li { width: 100%; text-align: left; }
+.mobile-drawer #nav-menu > li > a,
+.mobile-drawer .nav-dropdown-toggle,
+.mobile-drawer .report-toc a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 48px;
+  padding: 0.75rem;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--text-secondary);
+  white-space: normal;
+  border-radius: var(--radius-sm);
+  text-align: left;
+}
+.mobile-drawer .nav-dropdown-menu a { display: block; padding: 0.75rem; font-size: 0.938rem; font-weight: 500; text-align: left; }
+.mobile-drawer .nav-dropdown:not(.open) .nav-dropdown-menu { display: none; }
+.mobile-drawer .nav-dropdown.open .nav-dropdown-menu { display: grid; }
+.mobile-drawer a.active { background: var(--accent-light); }
+.mobile-drawer .resume-link { margin-top: 0.75rem; }
+
+@media (max-width: 1040px) {
+  .nav-container { justify-content: flex-end; gap: 0.75rem; min-height: 72px; padding-block: 0.75rem; }
+  .logo { left: var(--space-md); }
+  .menu-toggle { flex: 0 0 44px; border: 1px solid var(--border); }
+  .report-menu-toggle { display: inline-flex; align-items: center; min-height: 44px; padding: 0.5rem 0.75rem; border: 1px solid var(--border); border-radius: var(--radius-sm); background: var(--surface); color: var(--text-secondary); font-size: 0.875rem; cursor: pointer; }
+  .top-nav nav:empty { display: none; }
+  .coop-report-page .report-hero,
+  .coop-report-page .report-layout { width: 100%; max-width: 1160px; padding-inline: clamp(1rem, 3vw, 2rem); overflow: visible; }
+  .coop-report-page .report-hero-content,
+  .coop-report-page .report-title-row,
+  .coop-report-page .report-sections,
+  .coop-report-page .report-section-card,
+  .coop-report-page .report-pager { width: 100%; max-width: 100%; min-width: 0; }
+  .coop-report-page .report-section-card { padding-inline: 0; }
+  .report-layout { scroll-margin-top: 88px; }
+}
+@media (max-width: 600px) {
+  .coop-report-page .draw-word { font-size: clamp(1.85rem, 7.8vw, 3rem); flex-wrap: nowrap; }
+  .coop-report-page .report-title-logo { width: 44px; height: 44px; }
+  .report-page-heading h2 { overflow-wrap: anywhere; font-size: clamp(1.45rem, 6.5vw, 2rem); }
+  .report-content-card { padding-inline: 1rem; }
+  .hero-text p { max-width: 100%; }
+  .contact-link-value, .contact-link-card, .project-card, .experience-card, .skills-card { min-width: 0; overflow-wrap: anywhere; }
+  .contact-form-wrapper input, .contact-form-wrapper textarea, .contact-form-wrapper select { min-width: 0; max-width: 100%; font-size: 1rem; }
+  .footer-nav { flex-wrap: wrap; }
+}
+@media print {
+  .mobile-drawer, .report-menu-toggle { display: none !important; }
 }
